@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0AB40B55DCE727850519BE /* Pods_Tabman_Style.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB995E009411ECD87166B71F /* Pods_Tabman_Style.framework */; };
+		37A42B581E77DCF3A8CCADE3 /* Pods_Tabman_StyleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490372C4B5DB9BEBAE4D5904 /* Pods_Tabman_StyleTests.framework */; };
+		3DBCE9521C00184029035E12 /* Pods_Tabman_StyleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC200710B51E755EE20AE64A /* Pods_Tabman_StyleUITests.framework */; };
 		A14FA0412024D76D00798449 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0402024D76D00798449 /* AppDelegate.swift */; };
-		A14FA0432024D76D00798449 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0422024D76D00798449 /* ViewController.swift */; };
+		A14FA0432024D76D00798449 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0422024D76D00798449 /* MainViewController.swift */; };
 		A14FA0462024D76D00798449 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14FA0442024D76D00798449 /* Main.storyboard */; };
 		A14FA0482024D76D00798449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14FA0472024D76D00798449 /* Assets.xcassets */; };
 		A14FA04B2024D76D00798449 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14FA0492024D76D00798449 /* LaunchScreen.storyboard */; };
@@ -34,9 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C7C66A177384B01818BA3C4 /* Pods-Tabman Style.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman Style.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tabman Style/Pods-Tabman Style.release.xcconfig"; sourceTree = "<group>"; };
+		44B58A07EE2170F3E395C64B /* Pods-Tabman StyleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman StyleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tabman StyleTests/Pods-Tabman StyleTests.release.xcconfig"; sourceTree = "<group>"; };
+		490372C4B5DB9BEBAE4D5904 /* Pods_Tabman_StyleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_StyleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C2BC515116CBAFCAF241745 /* Pods-Tabman StyleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman StyleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tabman StyleTests/Pods-Tabman StyleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		87C1DA232181899BAC7C0064 /* Pods-Tabman StyleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman StyleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tabman StyleUITests/Pods-Tabman StyleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		95D12F4C7FE05B75C5F18E3A /* Pods-Tabman Style.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman Style.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tabman Style/Pods-Tabman Style.debug.xcconfig"; sourceTree = "<group>"; };
 		A14FA03D2024D76D00798449 /* Tabman Style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman Style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14FA0402024D76D00798449 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A14FA0422024D76D00798449 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A14FA0422024D76D00798449 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A14FA0452024D76D00798449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A14FA0472024D76D00798449 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A14FA04A2024D76D00798449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +56,9 @@
 		A14FA05C2024D76D00798449 /* Tabman StyleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tabman StyleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14FA0602024D76D00798449 /* Tabman_StyleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabman_StyleUITests.swift; sourceTree = "<group>"; };
 		A14FA0622024D76D00798449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB995E009411ECD87166B71F /* Pods_Tabman_Style.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Style.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC200710B51E755EE20AE64A /* Pods_Tabman_StyleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_StyleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0211853E320BCD4462034D /* Pods-Tabman StyleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman StyleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tabman StyleUITests/Pods-Tabman StyleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0AB40B55DCE727850519BE /* Pods_Tabman_Style.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A42B581E77DCF3A8CCADE3 /* Pods_Tabman_StyleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DBCE9521C00184029035E12 /* Pods_Tabman_StyleUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D9D17E882CFEDF9063B217B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				95D12F4C7FE05B75C5F18E3A /* Pods-Tabman Style.debug.xcconfig */,
+				2C7C66A177384B01818BA3C4 /* Pods-Tabman Style.release.xcconfig */,
+				7C2BC515116CBAFCAF241745 /* Pods-Tabman StyleTests.debug.xcconfig */,
+				44B58A07EE2170F3E395C64B /* Pods-Tabman StyleTests.release.xcconfig */,
+				DE0211853E320BCD4462034D /* Pods-Tabman StyleUITests.debug.xcconfig */,
+				87C1DA232181899BAC7C0064 /* Pods-Tabman StyleUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A14FA0342024D76D00798449 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,8 @@
 				A14FA0542024D76D00798449 /* Tabman StyleTests */,
 				A14FA05F2024D76D00798449 /* Tabman StyleUITests */,
 				A14FA03E2024D76D00798449 /* Products */,
+				9D9D17E882CFEDF9063B217B /* Pods */,
+				B92C9C76739C272ADC842570 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				A14FA0402024D76D00798449 /* AppDelegate.swift */,
-				A14FA0422024D76D00798449 /* ViewController.swift */,
+				A14FA0422024D76D00798449 /* MainViewController.swift */,
 				A14FA0442024D76D00798449 /* Main.storyboard */,
 				A14FA0472024D76D00798449 /* Assets.xcassets */,
 				A14FA0492024D76D00798449 /* LaunchScreen.storyboard */,
@@ -125,6 +155,16 @@
 			path = "Tabman StyleUITests";
 			sourceTree = "<group>";
 		};
+		B92C9C76739C272ADC842570 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB995E009411ECD87166B71F /* Pods_Tabman_Style.framework */,
+				490372C4B5DB9BEBAE4D5904 /* Pods_Tabman_StyleTests.framework */,
+				AC200710B51E755EE20AE64A /* Pods_Tabman_StyleUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A14FA0652024D76D00798449 /* Build configuration list for PBXNativeTarget "Tabman Style" */;
 			buildPhases = (
+				FC585844F8AEEACAE41B8D38 /* [CP] Check Pods Manifest.lock */,
 				A14FA0392024D76D00798449 /* Sources */,
 				A14FA03A2024D76D00798449 /* Frameworks */,
 				A14FA03B2024D76D00798449 /* Resources */,
+				7357E282A26717830208833D /* [CP] Embed Pods Frameworks */,
+				46E93BE79CA97BDE0640F03B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A14FA0682024D76D00798449 /* Build configuration list for PBXNativeTarget "Tabman StyleTests" */;
 			buildPhases = (
+				D10DBA00345D5480D5CC94C5 /* [CP] Check Pods Manifest.lock */,
 				A14FA04D2024D76D00798449 /* Sources */,
 				A14FA04E2024D76D00798449 /* Frameworks */,
 				A14FA04F2024D76D00798449 /* Resources */,
+				8C3F81E3E0B967A12202B408 /* [CP] Embed Pods Frameworks */,
+				F7DD1B13F2A60043E78A2EE1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A14FA06B2024D76D00798449 /* Build configuration list for PBXNativeTarget "Tabman StyleUITests" */;
 			buildPhases = (
+				1B86F45CBFC0A38020D3E26E /* [CP] Check Pods Manifest.lock */,
 				A14FA0582024D76D00798449 /* Sources */,
 				A14FA0592024D76D00798449 /* Frameworks */,
 				A14FA05A2024D76D00798449 /* Resources */,
+				D10A9CE45E15292169EB0AA3 /* [CP] Embed Pods Frameworks */,
+				64601271DB25FA735FDD4A31 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +303,166 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B86F45CBFC0A38020D3E26E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tabman StyleUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46E93BE79CA97BDE0640F03B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tabman Style/Pods-Tabman Style-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64601271DB25FA735FDD4A31 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tabman StyleUITests/Pods-Tabman StyleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7357E282A26717830208833D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tabman Style/Pods-Tabman Style-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
+				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
+				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tabman Style/Pods-Tabman Style-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C3F81E3E0B967A12202B408 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tabman StyleTests/Pods-Tabman StyleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D10A9CE45E15292169EB0AA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tabman StyleUITests/Pods-Tabman StyleUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D10DBA00345D5480D5CC94C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tabman StyleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7DD1B13F2A60043E78A2EE1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tabman StyleTests/Pods-Tabman StyleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC585844F8AEEACAE41B8D38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tabman Style-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A14FA0392024D76D00798449 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14FA0432024D76D00798449 /* ViewController.swift in Sources */,
+				A14FA0432024D76D00798449 /* MainViewController.swift in Sources */,
 				A14FA0412024D76D00798449 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,11 +627,13 @@
 		};
 		A14FA0662024D76D00798449 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95D12F4C7FE05B75C5F18E3A /* Pods-Tabman Style.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26TV24DK6Z;
 				INFOPLIST_FILE = "Tabman Style/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DopenessAcademy.Tabman-Style";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -439,11 +644,13 @@
 		};
 		A14FA0672024D76D00798449 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C7C66A177384B01818BA3C4 /* Pods-Tabman Style.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 26TV24DK6Z;
 				INFOPLIST_FILE = "Tabman Style/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DopenessAcademy.Tabman-Style";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,6 +661,7 @@
 		};
 		A14FA0692024D76D00798449 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C2BC515116CBAFCAF241745 /* Pods-Tabman StyleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +679,7 @@
 		};
 		A14FA06A2024D76D00798449 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44B58A07EE2170F3E395C64B /* Pods-Tabman StyleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +697,7 @@
 		};
 		A14FA06C2024D76D00798449 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE0211853E320BCD4462034D /* Pods-Tabman StyleUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +714,7 @@
 		};
 		A14FA06D2024D76D00798449 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87C1DA232181899BAC7C0064 /* Pods-Tabman StyleUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
