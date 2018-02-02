@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A14FA0412024D76D00798449 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0402024D76D00798449 /* AppDelegate.swift */; };
+		A14FA0432024D76D00798449 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0422024D76D00798449 /* ViewController.swift */; };
+		A14FA0462024D76D00798449 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14FA0442024D76D00798449 /* Main.storyboard */; };
+		A14FA0482024D76D00798449 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14FA0472024D76D00798449 /* Assets.xcassets */; };
+		A14FA04B2024D76D00798449 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14FA0492024D76D00798449 /* LaunchScreen.storyboard */; };
+		A14FA0562024D76D00798449 /* Tabman_StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0552024D76D00798449 /* Tabman_StyleTests.swift */; };
+		A14FA0612024D76D00798449 /* Tabman_StyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0602024D76D00798449 /* Tabman_StyleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A14FA0522024D76D00798449 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14FA0352024D76D00798449 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A14FA03C2024D76D00798449;
+			remoteInfo = "Tabman Style";
+		};
+		A14FA05D2024D76D00798449 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A14FA0352024D76D00798449 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A14FA03C2024D76D00798449;
+			remoteInfo = "Tabman Style";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A14FA03D2024D76D00798449 /* Tabman Style.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tabman Style.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14FA0402024D76D00798449 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A14FA0422024D76D00798449 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A14FA0452024D76D00798449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A14FA0472024D76D00798449 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A14FA04A2024D76D00798449 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A14FA04C2024D76D00798449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A14FA0512024D76D00798449 /* Tabman StyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tabman StyleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14FA0552024D76D00798449 /* Tabman_StyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabman_StyleTests.swift; sourceTree = "<group>"; };
+		A14FA0572024D76D00798449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A14FA05C2024D76D00798449 /* Tabman StyleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tabman StyleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14FA0602024D76D00798449 /* Tabman_StyleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabman_StyleUITests.swift; sourceTree = "<group>"; };
+		A14FA0622024D76D00798449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A14FA03A2024D76D00798449 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A14FA04E2024D76D00798449 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A14FA0592024D76D00798449 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A14FA0342024D76D00798449 = {
+			isa = PBXGroup;
+			children = (
+				A14FA03F2024D76D00798449 /* Tabman Style */,
+				A14FA0542024D76D00798449 /* Tabman StyleTests */,
+				A14FA05F2024D76D00798449 /* Tabman StyleUITests */,
+				A14FA03E2024D76D00798449 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A14FA03E2024D76D00798449 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A14FA03D2024D76D00798449 /* Tabman Style.app */,
+				A14FA0512024D76D00798449 /* Tabman StyleTests.xctest */,
+				A14FA05C2024D76D00798449 /* Tabman StyleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A14FA03F2024D76D00798449 /* Tabman Style */ = {
+			isa = PBXGroup;
+			children = (
+				A14FA0402024D76D00798449 /* AppDelegate.swift */,
+				A14FA0422024D76D00798449 /* ViewController.swift */,
+				A14FA0442024D76D00798449 /* Main.storyboard */,
+				A14FA0472024D76D00798449 /* Assets.xcassets */,
+				A14FA0492024D76D00798449 /* LaunchScreen.storyboard */,
+				A14FA04C2024D76D00798449 /* Info.plist */,
+			);
+			path = "Tabman Style";
+			sourceTree = "<group>";
+		};
+		A14FA0542024D76D00798449 /* Tabman StyleTests */ = {
+			isa = PBXGroup;
+			children = (
+				A14FA0552024D76D00798449 /* Tabman_StyleTests.swift */,
+				A14FA0572024D76D00798449 /* Info.plist */,
+			);
+			path = "Tabman StyleTests";
+			sourceTree = "<group>";
+		};
+		A14FA05F2024D76D00798449 /* Tabman StyleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A14FA0602024D76D00798449 /* Tabman_StyleUITests.swift */,
+				A14FA0622024D76D00798449 /* Info.plist */,
+			);
+			path = "Tabman StyleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A14FA03C2024D76D00798449 /* Tabman Style */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A14FA0652024D76D00798449 /* Build configuration list for PBXNativeTarget "Tabman Style" */;
+			buildPhases = (
+				A14FA0392024D76D00798449 /* Sources */,
+				A14FA03A2024D76D00798449 /* Frameworks */,
+				A14FA03B2024D76D00798449 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tabman Style";
+			productName = "Tabman Style";
+			productReference = A14FA03D2024D76D00798449 /* Tabman Style.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A14FA0502024D76D00798449 /* Tabman StyleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A14FA0682024D76D00798449 /* Build configuration list for PBXNativeTarget "Tabman StyleTests" */;
+			buildPhases = (
+				A14FA04D2024D76D00798449 /* Sources */,
+				A14FA04E2024D76D00798449 /* Frameworks */,
+				A14FA04F2024D76D00798449 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A14FA0532024D76D00798449 /* PBXTargetDependency */,
+			);
+			name = "Tabman StyleTests";
+			productName = "Tabman StyleTests";
+			productReference = A14FA0512024D76D00798449 /* Tabman StyleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A14FA05B2024D76D00798449 /* Tabman StyleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A14FA06B2024D76D00798449 /* Build configuration list for PBXNativeTarget "Tabman StyleUITests" */;
+			buildPhases = (
+				A14FA0582024D76D00798449 /* Sources */,
+				A14FA0592024D76D00798449 /* Frameworks */,
+				A14FA05A2024D76D00798449 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A14FA05E2024D76D00798449 /* PBXTargetDependency */,
+			);
+			name = "Tabman StyleUITests";
+			productName = "Tabman StyleUITests";
+			productReference = A14FA05C2024D76D00798449 /* Tabman StyleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A14FA0352024D76D00798449 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Dopeness Academy";
+				TargetAttributes = {
+					A14FA03C2024D76D00798449 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					A14FA0502024D76D00798449 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A14FA03C2024D76D00798449;
+					};
+					A14FA05B2024D76D00798449 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A14FA03C2024D76D00798449;
+					};
+				};
+			};
+			buildConfigurationList = A14FA0382024D76D00798449 /* Build configuration list for PBXProject "Tabman Style" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A14FA0342024D76D00798449;
+			productRefGroup = A14FA03E2024D76D00798449 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A14FA03C2024D76D00798449 /* Tabman Style */,
+				A14FA0502024D76D00798449 /* Tabman StyleTests */,
+				A14FA05B2024D76D00798449 /* Tabman StyleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A14FA03B2024D76D00798449 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A14FA04B2024D76D00798449 /* LaunchScreen.storyboard in Resources */,
+				A14FA0482024D76D00798449 /* Assets.xcassets in Resources */,
+				A14FA0462024D76D00798449 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A14FA04F2024D76D00798449 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A14FA05A2024D76D00798449 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A14FA0392024D76D00798449 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A14FA0432024D76D00798449 /* ViewController.swift in Sources */,
+				A14FA0412024D76D00798449 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A14FA04D2024D76D00798449 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A14FA0562024D76D00798449 /* Tabman_StyleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A14FA0582024D76D00798449 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A14FA0612024D76D00798449 /* Tabman_StyleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A14FA0532024D76D00798449 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A14FA03C2024D76D00798449 /* Tabman Style */;
+			targetProxy = A14FA0522024D76D00798449 /* PBXContainerItemProxy */;
+		};
+		A14FA05E2024D76D00798449 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A14FA03C2024D76D00798449 /* Tabman Style */;
+			targetProxy = A14FA05D2024D76D00798449 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A14FA0442024D76D00798449 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A14FA0452024D76D00798449 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A14FA0492024D76D00798449 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A14FA04A2024D76D00798449 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A14FA0632024D76D00798449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A14FA0642024D76D00798449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A14FA0662024D76D00798449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 26TV24DK6Z;
+				INFOPLIST_FILE = "Tabman Style/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DopenessAcademy.Tabman-Style";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A14FA0672024D76D00798449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 26TV24DK6Z;
+				INFOPLIST_FILE = "Tabman Style/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DopenessAcademy.Tabman-Style";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A14FA0692024D76D00798449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 26TV24DK6Z;
+				INFOPLIST_FILE = "Tabman StyleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DopenessAcademy.Tabman-StyleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tabman Style.app/Tabman Style";
+			};
+			name = Debug;
+		};
+		A14FA06A2024D76D00798449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 26TV24DK6Z;
+				INFOPLIST_FILE = "Tabman StyleTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DopenessAcademy.Tabman-StyleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tabman Style.app/Tabman Style";
+			};
+			name = Release;
+		};
+		A14FA06C2024D76D00798449 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 26TV24DK6Z;
+				INFOPLIST_FILE = "Tabman StyleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DopenessAcademy.Tabman-StyleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Tabman Style";
+			};
+			name = Debug;
+		};
+		A14FA06D2024D76D00798449 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 26TV24DK6Z;
+				INFOPLIST_FILE = "Tabman StyleUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.DopenessAcademy.Tabman-StyleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Tabman Style";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A14FA0382024D76D00798449 /* Build configuration list for PBXProject "Tabman Style" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A14FA0632024D76D00798449 /* Debug */,
+				A14FA0642024D76D00798449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A14FA0652024D76D00798449 /* Build configuration list for PBXNativeTarget "Tabman Style" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A14FA0662024D76D00798449 /* Debug */,
+				A14FA0672024D76D00798449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A14FA0682024D76D00798449 /* Build configuration list for PBXNativeTarget "Tabman StyleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A14FA0692024D76D00798449 /* Debug */,
+				A14FA06A2024D76D00798449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A14FA06B2024D76D00798449 /* Build configuration list for PBXNativeTarget "Tabman StyleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A14FA06C2024D76D00798449 /* Debug */,
+				A14FA06D2024D76D00798449 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A14FA0352024D76D00798449 /* Project object */;
+}
