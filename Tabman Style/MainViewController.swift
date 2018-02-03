@@ -24,12 +24,25 @@ class MainViewController: TabmanViewController {
         self.dataSource = self
     }
     
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        super.pageboyViewController(pageboyViewController, willScrollToPageAt: index, direction: direction, animated: animated)
+        self.tabman.pageboyViewController(pageboyViewController, willScrollToPageAt: index, direction: direction, animated: animated)
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        super.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
+        self.tabman.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
+    }
+    
+    override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
+        self.tabman.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
+    }
 }
 
 extension MainViewController {
     
     func configureUI() {
-        self.tabman.backgroundColor = .yellow
         self.view.addSubview(self.tabman)
         self.tabman.snp.makeConstraints({ [weak self] (make) in
             guard let topLayoutGuide = self?.topLayoutGuide else { return }
@@ -82,6 +95,9 @@ extension MainViewController: PageboyViewControllerDataSource {
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return Page.at(index: 2)
     }
-    
-    
 }
+
+
+
+
+

@@ -8,9 +8,33 @@
 
 import UIKit
 import Tabman
+import Pageboy
 import SnapKit
 
 public class Tabman: UIView {
+    
+    enum Position {
+        case left
+        case right
+        case center
+        case offLeft
+        case offright
+        
+        public var xPosition: CGFloat {
+            switch self {
+            case .left:
+                return 16
+            case .right:
+                return UIScreen.main.bounds.width - 16
+            case .center:
+                return UIScreen.main.bounds.width / 2
+            case .offLeft:
+                return Position.left.xPosition - 116
+            case .offright:
+                return Position.right.xPosition + 116
+            }
+        }
+    }
     
     public var items: [String]?
     
@@ -34,8 +58,17 @@ public class Tabman: UIView {
 extension Tabman {
     
     fileprivate func setup() {
+        self.backgroundColor = .white
         self.currentPage = self.delegate?.currentIndex
         self.currentPosition = self.delegate?.currentPosition
+    }
+    
+    private var itemLabel: UILabel {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
+        label.textColor = UIColor.black.withAlphaComponent(0.9)
+        label.adjustsFontSizeToFitWidth = true
+        return label
     }
     
     public func set(_ items: [String]) {
@@ -90,11 +123,29 @@ extension Tabman {
         }
     }
     
-    private var itemLabel: UILabel {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
-        label.textColor = .black
-        label.adjustsFontSizeToFitWidth = true
-        return label
+}
+
+extension Tabman: PageboyViewControllerDelegate {
+    
+    public func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        print(index)
+    }
+    
+    public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        print(position)
+        
+    }
+    
+    public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        print(index)
+        
     }
 }
+
+
+
+
+
+
+
+
