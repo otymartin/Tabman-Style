@@ -5,6 +5,7 @@ target 'Tabman Style' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'Tabman'
+  pod 'SnapKit'
   # Pods for Tabman Style
 
   target 'Tabman StyleTests' do

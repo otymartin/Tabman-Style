@@ -9,17 +9,37 @@
 import UIKit
 import Tabman
 import Pageboy
+import SnapKit
 
 class MainViewController: TabmanViewController {
+    
+    var tabman = Tabman()
     
     var viewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadViewControllers()
+        self.configureUI()
         self.dataSource = self
     }
     
+}
+
+extension MainViewController {
+    
+    func configureUI() {
+        self.tabman.backgroundColor = .yellow
+        self.view.addSubview(self.tabman)
+        self.tabman.snp.makeConstraints({ [weak self] (make) in
+            guard let topLayoutGuide = self?.topLayoutGuide else { return }
+            make.top.equalTo(topLayoutGuide.snp.bottom)
+            make.leading.equalTo(view.snp.leading)
+            make.trailing.equalTo(view.snp.trailing)
+            make.height.equalTo(44)
+        })
+        self.tabman.set(self.viewControllers.map { $0.title ?? "Title" })
+    }
 }
 
 extension MainViewController: PageboyViewControllerDataSource {
@@ -52,7 +72,6 @@ extension MainViewController: PageboyViewControllerDataSource {
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
-        self.bar.items = self.viewControllers.map { Item(title: $0.title ?? "") }
         return self.viewControllers.count
     }
     
