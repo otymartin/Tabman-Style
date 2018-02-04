@@ -10,7 +10,7 @@ import UIKit
 
 public struct TabItem {
     
-    private weak var view: UIView?
+    public var view: UIView?
     
     public var position: Position?
 
@@ -26,16 +26,16 @@ public struct TabItem {
 extension TabItem {
     
     fileprivate mutating func setInitialPosition(for button: TabmanButton) {
-        guard let page = button.page, let view = self.view else { return }
+        guard let page = button.page else { return }
         switch page {
         case .one:
             self.position = .left
         case .two:
-            self.position = .center(inView: view)
+            self.position = .center
         case .three:
-            self.position = .right(forButton: self.button, inView: view)
+            self.position = .right
         case .four:
-            self.position = .centerRight(inView: view)
+            self.position = .centerRight
         }
     }
 }
@@ -43,29 +43,30 @@ extension TabItem {
 public enum Position {
     
     case left
-    case right(forButton: UIButton, inView: UIView)
-    case center(inView: UIView)
-    case centerRight(inView: UIView)
-    case centerLeft(inView: UIView)
-    case farLeft(inView: UIView)
-    case farRight(forButton: UIButton, inView: UIView)
+    case right
+    case center
+    case centerRight
+    case centerLeft
+    case farLeft
+    case farRight
     
-    public var xPosition: CGFloat {
+    public func xPosition(item: TabItem) -> CGFloat? {
+        guard let view = item.view else { return nil }
         switch self {
         case .left:
-            return 16
-        case .centerLeft(let view):
+            return 16 + item.button.bounds.width
+        case .centerLeft:
             return view.bounds.width / 2
-        case .farLeft(let view):
-            return -(view.bounds.width - Position.left.xPosition)
-        case .center(let view):
+        case .farLeft:
+            return -(view.bounds.width - (16 + item.button.bounds.width))
+        case .center:
             return view.bounds.width / 2
-        case .right(let button, let view):
-            return view.bounds.width - (button.bounds.width + 16)
-        case .centerRight(let view):
-            return view.bounds.width / 2
-        case .farRight(let button, let view):
-            return (view.bounds.width * 2) - (button.bounds.width + 16)
+        case .right:
+            return view.bounds.width - 16
+        case .centerRight:
+            return view.bounds.width + (view.bounds.width / 2)
+        case .farRight:
+            return (view.bounds.width * 2) - (item.button.bounds.width + 16)
         }
     }
     

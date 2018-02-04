@@ -28,36 +28,51 @@ public class Tabman: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setup()
+        self.backgroundColor = .white
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        self.superview?.layoutIfNeeded()
+    }
+    
 }
 
 extension Tabman {
     
-    fileprivate func setup() {
-        self.backgroundColor = .white
-        self.layoutItems()
-    }
-    
-    private func layoutItems() {
-        
+    public func layoutItems() {
         for item in items {
-            
             self.addSubview(item.button)
-            
             item.button.snp.makeConstraints({ [weak self] (make) in
                 guard let view = self else { return }
                 make.centerY.equalTo(view.snp.centerY)
-                make.centerX.equalTo(item.position?.xPosition ?? 0)
+                if let position = item.position {
+                    switch position {
+                    case .left:
+                        make.leading.equalTo(view.snp.leading).offset(16)
+                    case .centerLeft:
+                        make.centerX.equalTo(view.snp.leading).offset(-(view.bounds.width / 2))
+                    case .center:
+                        make.centerX.equalTo(view.snp.centerX)
+                    case .farLeft:
+                        make.leading.equalTo(view.snp.leading).offset(-(view.bounds.width - 16))
+                    case .right:
+                        make.trailing.equalTo(view.snp.trailing).offset(-16)
+                    case .centerRight:
+                        make.trailing.equalTo(view.snp.trailing).offset(view.bounds.width / 2)
+                    case .farRight:
+                        make.trailing.equalTo(view.snp.trailing).offset(view.bounds.width - 16)
+                    }
+                }
             })
+            item.button.setNeedsLayout()
+            item.button.layoutIfNeeded()
         }
     }
-    
 }
 
 extension Tabman {

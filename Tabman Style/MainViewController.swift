@@ -13,7 +13,7 @@ import SnapKit
 
 class MainViewController: TabmanViewController {
     
-    var tabman = Tabman()
+    var tabman: Tabman!
     var xLabel = UILabel()
     var pageLabel = UILabel()
     var viewControllers: [UIViewController] = []
@@ -58,6 +58,8 @@ class MainViewController: TabmanViewController {
 extension MainViewController {
     
     func configureUI() {
+        self.tabman = Tabman()
+        self.tabman.items = self.setItems()
         self.view.addSubview(self.tabman)
         self.tabman.snp.makeConstraints({ [weak self] (make) in
             guard let topLayoutGuide = self?.topLayoutGuide else { return }
@@ -66,7 +68,9 @@ extension MainViewController {
             make.trailing.equalTo(view.snp.trailing)
             make.height.equalTo(44)
         })
-        
+        self.tabman.setNeedsLayout()
+        self.tabman.layoutIfNeeded()
+        self.tabman.layoutItems()
         self.configureLabels()
     }
     
@@ -88,18 +92,20 @@ extension MainViewController {
     
     fileprivate func tabmanButton(for page: TabPage) -> TabmanButton {
         let button = TabmanButton()
-        button.page = page
+        button.configure(for: page)
         return button
     }
 }
 
 extension MainViewController {
     
-    func setItem() {
-       // self.tabman.items = self.viewControllers.map { TabItem(button: , position:  )}
+    func setItems() -> [TabItem] {
+        var items: [TabItem] = []
         for page in iterateEnum(TabPage.self) {
-           let item = TabItem(button: self.tabmanButton(for: page), for: self.tabman)
+            let item = TabItem(button: self.tabmanButton(for: page), for: self.tabman)
+            items.append(item)
         }
+        return items
     }
 }
 

@@ -22,19 +22,23 @@ public class TabmanButton: UIButton {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.configure()
     }
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layoutIfNeeded()
+    }
 }
 
 extension TabmanButton {
     
-    fileprivate func configure() {
-        self.backgroundColor = .white
-        self.titleLabel?.textColor = UIColor.black.withAlphaComponent(0.9)
+    public func configure(for page: TabPage) {
+        self.page = page
+        self.setTitleColor(UIColor.black.withAlphaComponent(0.9), for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
         self.addTarget(self, action: #selector(self.Tap), for: .touchUpInside)
         self.setTitle()
