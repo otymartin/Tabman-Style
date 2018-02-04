@@ -18,6 +18,8 @@
 		A14FA0562024D76D00798449 /* Tabman_StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0552024D76D00798449 /* Tabman_StyleTests.swift */; };
 		A14FA0612024D76D00798449 /* Tabman_StyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0602024D76D00798449 /* Tabman_StyleUITests.swift */; };
 		A14FA06F2024FFD000798449 /* Tabman.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA06E2024FFD000798449 /* Tabman.swift */; };
+		A14FA0712026662F00798449 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0702026662F00798449 /* Item.swift */; };
+		A14FA0732026931D00798449 /* TabmanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0722026931D00798449 /* TabmanButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		A14FA0602024D76D00798449 /* Tabman_StyleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabman_StyleUITests.swift; sourceTree = "<group>"; };
 		A14FA0622024D76D00798449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14FA06E2024FFD000798449 /* Tabman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabman.swift; sourceTree = "<group>"; };
+		A14FA0702026662F00798449 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A14FA0722026931D00798449 /* TabmanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanButton.swift; sourceTree = "<group>"; };
 		AB995E009411ECD87166B71F /* Pods_Tabman_Style.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Style.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC200710B51E755EE20AE64A /* Pods_Tabman_StyleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_StyleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0211853E320BCD4462034D /* Pods-Tabman StyleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman StyleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tabman StyleUITests/Pods-Tabman StyleUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				A14FA0402024D76D00798449 /* AppDelegate.swift */,
 				A14FA0422024D76D00798449 /* MainViewController.swift */,
 				A14FA06E2024FFD000798449 /* Tabman.swift */,
+				A14FA0702026662F00798449 /* Item.swift */,
+				A14FA0722026931D00798449 /* TabmanButton.swift */,
 				A14FA0442024D76D00798449 /* Main.storyboard */,
 				A14FA0472024D76D00798449 /* Assets.xcassets */,
 				A14FA0492024D76D00798449 /* LaunchScreen.storyboard */,
@@ -467,6 +473,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14FA0732026931D00798449 /* TabmanButton.swift in Sources */,
+				A14FA0712026662F00798449 /* Item.swift in Sources */,
 				A14FA0432024D76D00798449 /* MainViewController.swift in Sources */,
 				A14FA06F2024FFD000798449 /* Tabman.swift in Sources */,
 				A14FA0412024D76D00798449 /* AppDelegate.swift in Sources */,

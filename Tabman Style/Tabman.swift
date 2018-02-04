@@ -13,29 +13,6 @@ import SnapKit
 
 public class Tabman: UIView {
     
-    enum Position {
-        case left
-        case right
-        case center
-        case offLeft
-        case offright
-        
-        public var xPosition: CGFloat {
-            switch self {
-            case .left:
-                return 16
-            case .right:
-                return UIScreen.main.bounds.width - 16
-            case .center:
-                return UIScreen.main.bounds.width / 2
-            case .offLeft:
-                return Position.left.xPosition - 116
-            case .offright:
-                return Position.right.xPosition + 116
-            }
-        }
-    }
-    
     public var items: [String]?
     
     public var currentPage: Int?
@@ -123,6 +100,25 @@ extension Tabman {
         }
     }
     
+}
+
+extension Tabman {
+    
+    private func interpolate(to position: Position, progress: CGFloat) {
+        var curve: UIViewAnimationCurve = .easeIn
+        switch position {
+        case .left, .right:
+            curve = .easeIn
+        case .center:
+            curve = .easeOut
+        case .offright, .offLeft:
+            curve = .easeOut
+        }
+        let interpolation = UIViewPropertyAnimator(duration: 0, curve: curve) {
+            
+        }
+        interpolation.fractionComplete = progress
+    }
 }
 
 extension Tabman: PageboyViewControllerDelegate {

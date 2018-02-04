@@ -55,6 +55,13 @@ extension MainViewController {
     }
 }
 
+private func configureItems() {
+    for index in 0...4 {
+        
+    }
+}
+
+
 extension MainViewController: PageboyViewControllerDataSource {
     
     func loadViewControllers() {
