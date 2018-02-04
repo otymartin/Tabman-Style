@@ -37,7 +37,7 @@ extension TabItem {
         case .three:
             self.position = .right
         case .four:
-            self.position = .centerRight
+            self.position = .offRight
         }
     }
 }

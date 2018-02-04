@@ -23,6 +23,7 @@ public enum Position {
     case right
     case offRight
     case centerRight
+    case farRight
     
     public func xPosition(for item: TabItem) -> CGFloat? {
         guard let view = item.view else { return nil }
@@ -41,6 +42,8 @@ public enum Position {
             return view.bounds.width + 16
         case .centerRight:
             return view.bounds.width + (view.bounds.width / 2)
+        case .farRight:
+            return (view.bounds.width * 2) - 16
         }
     }
     
@@ -93,6 +96,15 @@ public enum Position {
                 return nil
             }
         case .centerRight:
+            switch direction {
+            case .forward:
+                return Position.farRight
+            case .reverse:
+                return Position.offRight
+            default:
+                return nil
+            }
+        case .farRight:
             if direction == .reverse {
                 return Position.offRight
             }
