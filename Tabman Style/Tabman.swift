@@ -11,6 +11,11 @@ import Tabman
 import Pageboy
 import SnapKit
 
+public protocol TabmanResponder: class {
+    
+    func didTap(item: TabItem, at position: Position, in page: TabPage)
+}
+
 public class Tabman: UIView {
     
     public var currentPage: Int?
@@ -19,7 +24,7 @@ public class Tabman: UIView {
     
     public var currentPosition: CGPoint?
     
-    public var delegate: TabmanViewController?
+    public var delegate: TabmanResponder?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,67 +41,20 @@ extension Tabman {
     
     fileprivate func setup() {
         self.backgroundColor = .white
-        self.currentPage = self.delegate?.currentIndex
-        self.currentPosition = self.delegate?.currentPosition
+        self.layoutItems()
     }
     
-    private var itemLabel: UILabel {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
-        label.textColor = UIColor.black.withAlphaComponent(0.9)
-        label.adjustsFontSizeToFitWidth = true
-        return label
-    }
-    
-    public func set(_ items: [String]) {
-        print(items)
-        for (index, item) in items.enumerated() {
-            self.layout(item: item, at: index)
-        }
-    }
-    
-    private func layout(item: String, at index: Int) {
-        let label = self.itemLabel
-        label.text = item
-        self.addSubview(label)
+    private func layoutItems() {
         
-        switch index {
-        case 0:
-            label.snp.makeConstraints({ [weak self] (make) in
-                if let view = self {
-                    make.leading.equalTo(view.snp.leading).offset(-100)
-                    make.centerY.equalTo(view.snp.centerY)
-                }
+        for item in items {
+            
+            self.addSubview(item.button)
+            
+            item.button.snp.makeConstraints({ [weak self] (make) in
+                guard let view = self else { return }
+                make.centerY.equalTo(view.snp.centerY)
+                make.centerX.equalTo(item.position.xPosition)
             })
-        case 1:
-            label.snp.makeConstraints({ [weak self] (make) in
-                if let view = self {
-                    make.leading.equalTo(view.snp.leading).offset(16)
-                    make.centerY.equalTo(view.snp.centerY)
-                }
-            })
-        case 2:
-            label.snp.makeConstraints({ [weak self] (make) in
-                if let view = self {
-                    make.center.equalTo(view.snp.center)
-                }
-            })
-        case 3:
-            label.snp.makeConstraints({ [weak self] (make) in
-                if let view = self {
-                    make.trailing.equalTo(view.snp.trailing).offset(-16)
-                    make.centerY.equalTo(view.snp.centerY)
-                }
-            })
-        case 4:
-            label.snp.makeConstraints({ [weak self] (make) in
-                if let view = self {
-                    make.trailing.equalTo(view.snp.trailing).offset(100)
-                    make.centerY.equalTo(view.snp.centerY)
-                }
-            })
-        default:
-            break
         }
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 
-public protocol TabmanButtonResponder: class {
+public protocol TabmanButtonDelegate: class {
     
     func didTapButton(for page: TabPage)
 }
@@ -24,7 +24,7 @@ public class TabmanButton: UIButton {
         }
     }
     
-    public weak var delegate: TabmanButtonResponder?
+    public weak var delegate: TabmanButtonDelegate?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,13 +34,13 @@ public class TabmanButton: UIButton {
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 
 extension TabmanButton {
     
     fileprivate func configure() {
-        self.backgroundColor = .clear
+        self.backgroundColor = .white
+        self.titleLabel?.textColor = UIColor.black.withAlphaComponent(0.9)
         self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
         self.addTarget(self, action: #selector(self.Tap), for: .touchUpInside)
         self.setTitle()

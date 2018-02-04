@@ -66,7 +66,6 @@ extension MainViewController {
             make.trailing.equalTo(view.snp.trailing)
             make.height.equalTo(44)
         })
-        self.tabman.set(self.viewControllers.map { $0.title ?? "Title" })
         
         self.configureLabels()
     }
@@ -75,8 +74,7 @@ extension MainViewController {
         self.xLabel.configure()
         self.view.addSubview(self.xLabel)
         self.xLabel.snp.makeConstraints { (make) in
-            make.centerX.equalTo(view.snp.centerX)
-            make.centerY.equalTo(view.snp.bottom).offset(-100)
+            make.center.equalTo(view.snp.center)
         }
         
         self.pageLabel.configure()
@@ -94,7 +92,13 @@ extension MainViewController {
         button.title = title
         return button
     }
+}
 
+extension MainViewController {
+    
+    func setItem() {
+       // self.tabman.items = self.viewControllers.map { TabItem(button: , position:  )}
+    }
 }
 
 extension UILabel {
@@ -111,32 +115,9 @@ extension MainViewController: PageboyViewControllerDataSource {
     func configureViewControllers() {
         
         for index in 0...4 {
-            let viewController = UIViewController()
-            switch index {
-            case 0:
-                viewController.title = "One"
-                viewController.view.backgroundColor = .red
-                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .offLeft))
-            case 1:
-                viewController.title = "Two"
-                viewController.view.backgroundColor = .blue
-                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .left))
-            case 2:
-                viewController.title = "Three"
-                viewController.view.backgroundColor = .cyan
-                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .center))
-            case 3:
-                viewController.title = "Four"
-                viewController.view.backgroundColor = .yellow
-                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .right))
-            case 4:
-                viewController.title = "Five"
-                viewController.view.backgroundColor = .purple
-                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .offRight))
-            default:
-                break
-            }
-            self.viewControllers.append(viewController)
+            let pageViewController = PageViewController()
+            pageViewController.page = index.tabPage
+            self.viewControllers.append(pageViewController)
         }
     
     }
