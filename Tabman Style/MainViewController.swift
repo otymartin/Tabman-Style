@@ -14,8 +14,20 @@ import SnapKit
 class MainViewController: TabmanViewController {
     
     var tabman = Tabman()
-    
+    var xLabel = UILabel()
+    var pageLabel = UILabel()
     var viewControllers: [UIViewController] = []
+
+    var xPosition: CGFloat = 0 {
+        didSet {
+            self.xLabel.text = String(format: "x: %.2f", self.xPosition)
+        }
+    }
+    var currentPage: Int = 0 {
+        didSet {
+            self.pageLabel.text = String("Page: \(self.currentPage)")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +44,14 @@ class MainViewController: TabmanViewController {
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
         self.tabman.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
+        self.xPosition = position.x
+        
     }
     
     override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
         self.tabman.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
+        self.currentPage = index
     }
 }
 
@@ -52,17 +67,46 @@ extension MainViewController {
             make.height.equalTo(44)
         })
         self.tabman.set(self.viewControllers.map { $0.title ?? "Title" })
+        
+        self.configureLabels()
+    }
+    
+    private func configureLabels() {
+        self.xLabel.configure()
+        self.view.addSubview(self.xLabel)
+        self.xLabel.snp.makeConstraints { (make) in
+            make.centerX.equalTo(view.snp.centerX)
+            make.centerY.equalTo(view.snp.bottom).offset(-100)
+        }
+        
+        self.pageLabel.configure()
+        self.view.addSubview(self.pageLabel)
+        self.pageLabel.snp.makeConstraints { [weak self] (make) in
+            guard let xLabel = self?.xLabel else { return }
+            make.top.equalTo(xLabel.snp.bottom).offset(5)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+    }
+
+}
+
+extension UILabel {
+    
+    public func configure() {
+        self.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        self.textColor = UIColor.black.withAlphaComponent(0.8)
+        self.textAlignment = .center
     }
 }
 
 extension MainViewController {
     
     fileprivate func configureItems() {
-        var items: [Item] = []
+        var items: [TabItem] = []
         for index in 0...4 {
             switch index {
             case 0:
-                let button = Item(
+                items.append(TabItem(button: self.tabmanButton(for: .one, with: "One"), position: .offLeft))
             default:
                 break
             }

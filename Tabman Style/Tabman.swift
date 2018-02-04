@@ -124,16 +124,12 @@ extension Tabman {
 extension Tabman: PageboyViewControllerDelegate {
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
-        print(index)
     }
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
-        print(position)
-        
     }
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
-        print(index)
         
     }
 }
