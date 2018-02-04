@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 public struct TabItem {
     
     public var button: TabmanButton
@@ -19,14 +18,6 @@ public struct TabItem {
         self.button = button
         self.position = position
     }
-}
-
-public enum TabPage {
-    case one
-    case two
-    case three
-    case four
-    case five
 }
 
 public enum Position {

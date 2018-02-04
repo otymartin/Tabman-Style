@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 public protocol TabmanButtonResponder: class {
     
     func didTapButton(for page: TabPage)

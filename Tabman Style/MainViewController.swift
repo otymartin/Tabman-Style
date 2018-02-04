@@ -25,7 +25,7 @@ class MainViewController: TabmanViewController {
     }
     var currentPage: Int = 0 {
         didSet {
-            self.pageLabel.text = String("Page: \(self.currentPage)")
+            self.pageLabel.text = String("page: \(self.currentPage)")
         }
     }
     
