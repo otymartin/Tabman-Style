@@ -69,19 +69,4 @@ public enum Position {
         }
     }
     
-    /*public var xPosition: CGFloat {
-        switch self {
-        case .farLeft:
-            return - (UIScreen.main.bounds.width + Position.left.xPosition)
-        case .centerLeft:
-            return - (Position.center.xPosition)
-        case .left:
-            return 16
-        case .right:
-            return UIScreen.main.bounds.width - 16
-        case .center:
-            return UIScreen.main.bounds.width / 2
-   
-        }
-    }*/
 }
