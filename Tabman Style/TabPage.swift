@@ -13,7 +13,6 @@ public enum TabPage {
     case two
     case three
     case four
-    case five
     
     public var title: String {
         switch self {
@@ -25,8 +24,6 @@ public enum TabPage {
             return "Three"
         case .four:
             return "Four"
-        case .five:
-            return "Five"
         }
     }
     
@@ -40,22 +37,7 @@ public enum TabPage {
             return .cyan
         case .four:
             return .yellow
-        case .five:
-            return .purple
         }
-    }
-}
-
-extension Int {
-    
-    public var tabPage: TabPage? {
-        
-        for page in iterateEnum(TabPage.self) {
-            if self == page.hashValue {
-                return page
-            }
-        }
-        return nil
     }
 }
 

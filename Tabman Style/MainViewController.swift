@@ -98,6 +98,9 @@ extension MainViewController {
     
     func setItem() {
        // self.tabman.items = self.viewControllers.map { TabItem(button: , position:  )}
+        for page in iterateEnum(TabPage.self) {
+           // let item = TabItem(button: , position: )
+        }
     }
 }
 
@@ -114,12 +117,11 @@ extension MainViewController: PageboyViewControllerDataSource {
     
     func configureViewControllers() {
         
-        for index in 0...4 {
+        for page in iterateEnum(TabPage.self) {
             let pageViewController = PageViewController()
-            pageViewController.page = index.tabPage
+            pageViewController.page = page
             self.viewControllers.append(pageViewController)
         }
-    
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {

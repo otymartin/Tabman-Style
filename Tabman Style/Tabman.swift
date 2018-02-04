@@ -53,7 +53,7 @@ extension Tabman {
             item.button.snp.makeConstraints({ [weak self] (make) in
                 guard let view = self else { return }
                 make.centerY.equalTo(view.snp.centerY)
-                make.centerX.equalTo(item.position.xPosition)
+                //make.centerX.equalTo(item.position.xPosition)
             })
         }
     }
@@ -62,7 +62,7 @@ extension Tabman {
 
 extension Tabman {
     
-    private func interpolate(to position: Position, progress: CGFloat) {
+    /*private func interpolate(to position: Position, progress: CGFloat) {
         var curve: UIViewAnimationCurve = .easeIn
         switch position {
         case .left, .right:
@@ -76,7 +76,7 @@ extension Tabman {
             
         }
         interpolation.fractionComplete = progress
-    }
+    }*/
 }
 
 extension Tabman: PageboyViewControllerDelegate {
