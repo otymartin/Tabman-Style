@@ -54,18 +54,18 @@ extension Tabman {
                     switch position {
                     case .left:
                         make.leading.equalTo(view.snp.leading).offset(16)
+                    case .offLeft:
+                        make.trailing.equalTo(view.snp.leading).offset(16)
                     case .centerLeft:
                         make.centerX.equalTo(view.snp.leading).offset(-(view.bounds.width / 2))
                     case .center:
                         make.centerX.equalTo(view.snp.centerX)
-                    case .farLeft:
-                        make.leading.equalTo(view.snp.leading).offset(-(view.bounds.width - 16))
                     case .right:
                         make.trailing.equalTo(view.snp.trailing).offset(-16)
+                    case .offRight:
+                        make.leading.equalTo(view.snp.trailing).offset(16)
                     case .centerRight:
                         make.trailing.equalTo(view.snp.trailing).offset(view.bounds.width / 2)
-                    case .farRight:
-                        make.trailing.equalTo(view.snp.trailing).offset(view.bounds.width - 16)
                     }
                 }
             })

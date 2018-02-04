@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Tabman
+import Pageboy
 
 public struct TabItem {
     
@@ -38,36 +40,4 @@ extension TabItem {
             self.position = .centerRight
         }
     }
-}
-
-public enum Position {
-    
-    case left
-    case right
-    case center
-    case centerRight
-    case centerLeft
-    case farLeft
-    case farRight
-    
-    public func xPosition(item: TabItem) -> CGFloat? {
-        guard let view = item.view else { return nil }
-        switch self {
-        case .left:
-            return 16 + item.button.bounds.width
-        case .centerLeft:
-            return view.bounds.width / 2
-        case .farLeft:
-            return -(view.bounds.width - (16 + item.button.bounds.width))
-        case .center:
-            return view.bounds.width / 2
-        case .right:
-            return view.bounds.width - 16
-        case .centerRight:
-            return view.bounds.width + (view.bounds.width / 2)
-        case .farRight:
-            return (view.bounds.width * 2) - (item.button.bounds.width + 16)
-        }
-    }
-    
 }
