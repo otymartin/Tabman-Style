@@ -18,12 +18,6 @@ public class TabmanButton: UIButton {
     
     public var page: TabPage?
     
-    public var title: String? {
-        didSet {
-            self.setTitle()
-        }
-    }
-    
     public weak var delegate: TabmanButtonDelegate?
     
     public override init(frame: CGRect) {
@@ -52,7 +46,7 @@ extension TabmanButton {
     }
     
     fileprivate func setTitle() {
-        guard let title = self.title else { return }
-        self.setTitle(title, for: .normal)
+        guard let page = self.page else { return }
+        self.setTitle(page.title, for: .normal)
     }
 }

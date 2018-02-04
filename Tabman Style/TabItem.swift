@@ -12,12 +12,12 @@ public struct TabItem {
     
     private weak var view: UIView?
     
-    private var position: Position?
+    public var position: Position?
 
     public var button: TabmanButton
     
-    public init(button: TabmanButton, in view: UIView) {
-        self.view = view
+    public init(button: TabmanButton, for tabman: Tabman) {
+        self.view = tabman
         self.button = button
         self.setInitialPosition(for: self.button)
     }

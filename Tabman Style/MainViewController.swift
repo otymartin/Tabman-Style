@@ -86,10 +86,9 @@ extension MainViewController {
         }
     }
     
-    fileprivate func tabmanButton(for page: TabPage, with title: String) -> TabmanButton {
+    fileprivate func tabmanButton(for page: TabPage) -> TabmanButton {
         let button = TabmanButton()
         button.page = page
-        button.title = title
         return button
     }
 }
@@ -99,7 +98,7 @@ extension MainViewController {
     func setItem() {
        // self.tabman.items = self.viewControllers.map { TabItem(button: , position:  )}
         for page in iterateEnum(TabPage.self) {
-           // let item = TabItem(button: , position: )
+           let item = TabItem(button: self.tabmanButton(for: page), for: self.tabman)
         }
     }
 }

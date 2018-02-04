@@ -53,7 +53,7 @@ extension Tabman {
             item.button.snp.makeConstraints({ [weak self] (make) in
                 guard let view = self else { return }
                 make.centerY.equalTo(view.snp.centerY)
-                //make.centerX.equalTo(item.position.xPosition)
+                make.centerX.equalTo(item.position?.xPosition ?? 0)
             })
         }
     }
