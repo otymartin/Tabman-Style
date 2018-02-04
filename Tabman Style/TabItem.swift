@@ -1,5 +1,5 @@
 //
-//  Item.swift
+//  TabItem.swift
 //  Tabman Style
 //
 //  Created by Martin Otyeka on 2018-02-03.
@@ -9,22 +9,19 @@
 import UIKit
 
 
-public struct Item {
+public struct TabItem {
     
-    public var page: Page
+    public var button: TabmanButton
     
-    public var button: UIButton
+    public var position: Position
     
-    public var currentPosition: Position
-    
-    public init(page: Page, button: UIButton, currentPosition: Position) {
-        self.page = page
+    public init(button: TabmanButton, position: Position) {
         self.button = button
-        self.currentPosition = currentPosition
+        self.position = position
     }
 }
 
-public enum Page {
+public enum TabPage {
     case one
     case two
     case three

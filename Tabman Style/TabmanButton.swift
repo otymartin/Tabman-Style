@@ -10,14 +10,12 @@ import UIKit
 
 public protocol TabmanButtonResponder: class {
     
-    func didTapButton(for page: Page, at position: Position)
+    func didTapButton(for page: TabPage)
 }
 
 public class TabmanButton: UIButton {
     
-    public var page: Page?
-    
-    public var currentPosition: Position?
+    public var page: TabPage?
     
     public var title: String? {
         didSet {
@@ -44,11 +42,12 @@ extension TabmanButton {
         self.backgroundColor = .clear
         self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
         self.addTarget(self, action: #selector(self.Tap), for: .touchUpInside)
+        self.setTitle()
     }
     
     @objc private func Tap() {
-        guard let page = self.page, let currentPosition = self.currentPosition else { return }
-        self.delegate?.didTapButton(for: page, at: currentPosition)
+        guard let page = self.page else { return }
+        self.delegate?.didTapButton(for: page)
     }
     
     fileprivate func setTitle() {

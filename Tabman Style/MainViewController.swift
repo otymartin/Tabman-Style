@@ -55,12 +55,27 @@ extension MainViewController {
     }
 }
 
-private func configureItems() {
-    for index in 0...4 {
-        
+extension MainViewController {
+    
+    fileprivate func configureItems() {
+        var items: [Item] = []
+        for index in 0...4 {
+            switch index {
+            case 0:
+                let button = Item(
+            default:
+                break
+            }
+        }
+    }
+    
+    private func tabmanButton(for page: TabPage, with title: String) -> TabmanButton {
+        let button = TabmanButton()
+        button.page = page
+        button.title = title
+        return button
     }
 }
-
 
 extension MainViewController: PageboyViewControllerDataSource {
     
