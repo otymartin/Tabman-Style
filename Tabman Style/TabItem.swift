@@ -34,7 +34,7 @@ public enum Position {
     case right
     case center
     case offLeft
-    case offright
+    case offRight
     
     public var xPosition: CGFloat {
         switch self {
@@ -46,7 +46,7 @@ public enum Position {
             return UIScreen.main.bounds.width / 2
         case .offLeft:
             return Position.left.xPosition - 116
-        case .offright:
+        case .offRight:
             return Position.right.xPosition + 116
         }
     }

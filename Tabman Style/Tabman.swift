@@ -13,9 +13,9 @@ import SnapKit
 
 public class Tabman: UIView {
     
-    public var items: [String]?
-    
     public var currentPage: Int?
+    
+    public var items: [TabItem] = []
     
     public var currentPosition: CGPoint?
     
@@ -111,7 +111,7 @@ extension Tabman {
             curve = .easeIn
         case .center:
             curve = .easeOut
-        case .offright, .offLeft:
+        case .offRight, .offLeft:
             curve = .easeOut
         }
         let interpolation = UIViewPropertyAnimator(duration: 0, curve: curve) {

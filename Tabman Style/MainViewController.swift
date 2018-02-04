@@ -31,7 +31,7 @@ class MainViewController: TabmanViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadViewControllers()
+        self.configureViewControllers()
         self.configureUI()
         self.dataSource = self
     }
@@ -87,6 +87,13 @@ extension MainViewController {
             make.centerX.equalTo(view.snp.centerX)
         }
     }
+    
+    fileprivate func tabmanButton(for page: TabPage, with title: String) -> TabmanButton {
+        let button = TabmanButton()
+        button.page = page
+        button.title = title
+        return button
+    }
 
 }
 
@@ -99,31 +106,9 @@ extension UILabel {
     }
 }
 
-extension MainViewController {
-    
-    fileprivate func configureItems() {
-        var items: [TabItem] = []
-        for index in 0...4 {
-            switch index {
-            case 0:
-                items.append(TabItem(button: self.tabmanButton(for: .one, with: "One"), position: .offLeft))
-            default:
-                break
-            }
-        }
-    }
-    
-    private func tabmanButton(for page: TabPage, with title: String) -> TabmanButton {
-        let button = TabmanButton()
-        button.page = page
-        button.title = title
-        return button
-    }
-}
-
 extension MainViewController: PageboyViewControllerDataSource {
     
-    func loadViewControllers() {
+    func configureViewControllers() {
         
         for index in 0...4 {
             let viewController = UIViewController()
@@ -131,23 +116,29 @@ extension MainViewController: PageboyViewControllerDataSource {
             case 0:
                 viewController.title = "One"
                 viewController.view.backgroundColor = .red
+                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .offLeft))
             case 1:
                 viewController.title = "Two"
                 viewController.view.backgroundColor = .blue
+                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .left))
             case 2:
                 viewController.title = "Three"
                 viewController.view.backgroundColor = .cyan
+                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .center))
             case 3:
                 viewController.title = "Four"
                 viewController.view.backgroundColor = .yellow
+                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .right))
             case 4:
                 viewController.title = "Five"
                 viewController.view.backgroundColor = .purple
+                self.tabman.items.append(TabItem(button: self.tabmanButton(for: .one, with: viewController.title ?? ""), position: .offRight))
             default:
                 break
             }
             self.viewControllers.append(viewController)
         }
+    
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
