@@ -19,14 +19,14 @@ public struct TabItem {
     public init(button: TabmanButton, for tabman: Tabman) {
         self.view = tabman
         self.button = button
-        self.setInitialPosition(for: self.button)
+        self.setInitialPosition()
     }
 }
 
 extension TabItem {
     
-    fileprivate mutating func setInitialPosition(for button: TabmanButton) {
-        guard let page = button.page else { return }
+    fileprivate mutating func setInitialPosition() {
+        guard let page = self.button.page else { return }
         switch page {
         case .one:
             self.position = .left

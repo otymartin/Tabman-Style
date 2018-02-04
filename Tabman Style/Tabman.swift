@@ -77,21 +77,9 @@ extension Tabman {
 
 extension Tabman {
     
-    /*private func interpolate(to position: Position, progress: CGFloat) {
-        var curve: UIViewAnimationCurve = .easeIn
-        switch position {
-        case .left, .right:
-            curve = .easeIn
-        case .center:
-            curve = .easeOut
-        case .offRight, .offLeft:
-            curve = .easeOut
-        }
-        let interpolation = UIViewPropertyAnimator(duration: 0, curve: curve) {
-            
-        }
-        interpolation.fractionComplete = progress
-    }*/
+    private func interpolate(to position: Position, progress: CGFloat) {
+       
+    }
 }
 
 extension Tabman: PageboyViewControllerDelegate {
