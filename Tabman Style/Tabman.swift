@@ -24,11 +24,14 @@ public class Tabman: UIView {
     
     public var currentPosition: CGPoint?
     
+    fileprivate var animator: UIViewPropertyAnimator?
+    
     public var delegate: TabmanResponder?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
+        
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -43,6 +46,11 @@ public class Tabman: UIView {
 }
 
 extension Tabman {
+    
+    fileprivate func setup() {
+        self.backgroundColor = .white
+        self.animator = UIViewPropertyAnimator()
+    }
     
     public func layoutItems() {
         for item in items {
@@ -66,6 +74,8 @@ extension Tabman {
                         make.leading.equalTo(view.snp.trailing).offset(16)
                     case .centerRight:
                         make.trailing.equalTo(view.snp.trailing).offset(view.bounds.width / 2)
+                    case .farRight:
+                        make.trailing.equalTo(view.snp.trailing).offset(view.bounds.width - 16)
                     }
                 }
             })
@@ -78,7 +88,15 @@ extension Tabman {
 extension Tabman {
     
     private func interpolate(to position: Position, progress: CGFloat) {
-       
+        for item in items {
+        }
+    }
+    
+    private func animate(item: TabItem, direction: Direction) -> UIViewPropertyAnimator {
+        let animator = UIViewPropertyAnimator(duration: 1, curve: .easeIn) {
+            item.button.center.x = item.position?.toPosition(for: item, with: direction)
+        }
+        animator.progre
     }
 }
 
@@ -88,6 +106,8 @@ extension Tabman: PageboyViewControllerDelegate {
     }
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        var progress = 1 - (self.currentPosition?.x ?? 0)
+        
     }
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
