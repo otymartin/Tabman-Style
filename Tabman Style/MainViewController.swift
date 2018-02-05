@@ -97,18 +97,6 @@ extension MainViewController {
     }
 }
 
-extension MainViewController {
-    
-    func setItems() -> [TabItem] {
-        var items: [TabItem] = []
-        for page in iterateEnum(TabPage.self) {
-            let item = TabItem(button: self.tabmanButton(for: page))
-            items.append(item)
-        }
-        return items
-    }
-}
-
 extension UILabel {
     
     public func configure() {
