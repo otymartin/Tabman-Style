@@ -41,8 +41,7 @@ public class Tabman: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
-        
+        self.setup()
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -60,13 +59,17 @@ extension Tabman {
     
     fileprivate func setup() {
         self.backgroundColor = .white
-        self.one = TabItem(button: self.tabmanButton(for: .one), for: self)
-        self.two = TabItem(button: self.tabmanButton(for: .two), for: self)
-        self.three = TabItem(button: self.tabmanButton(for: .three), for: self)
-        self.four = TabItem(button: self.tabmanButton(for: .four), for: self)
+        self.one = TabItem(button: self.tabmanButton(for: .one))
+        self.two = TabItem(button: self.tabmanButton(for: .two))
+        self.three = TabItem(button: self.tabmanButton(for: .three))
+        self.four = TabItem(button: self.tabmanButton(for: .four))
         self.layoutItems()
-        self.forwardAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: nil)
-        self.reverseAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: nil)
+        self.forwardAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: {
+            self.one.button.center.x = self.one.position?.toPosition(for: self.one, with: .forward) ?? 0
+        })
+        self.reverseAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: {
+            self.one.button.center.x = self.one.position?.toPosition(for: self.one, with: .reverse) ?? 0
+        })
     }
     
     private func tabmanButton(for page: TabPage) -> TabmanButton {
@@ -114,9 +117,9 @@ extension Tabman: PageboyViewControllerDelegate {
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
     }
     
-    public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+    public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction:
+        PageboyViewController.NavigationDirection, animated: Bool) {
         let progress = 1 - (self.currentPosition?.x ?? 0)
-        print(progress)
         switch direction {
         case .forward:
             self.forwardAnimator?.fractionComplete = progress

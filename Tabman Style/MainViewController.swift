@@ -79,6 +79,7 @@ extension MainViewController {
         self.xLabel.snp.makeConstraints { (make) in
             make.center.equalTo(view.snp.center)
         }
+        self.xPosition = 0.0
         
         self.pageLabel.configure()
         self.view.addSubview(self.pageLabel)
@@ -101,7 +102,7 @@ extension MainViewController {
     func setItems() -> [TabItem] {
         var items: [TabItem] = []
         for page in iterateEnum(TabPage.self) {
-            let item = TabItem(button: self.tabmanButton(for: page), for: self.tabman)
+            let item = TabItem(button: self.tabmanButton(for: page))
             items.append(item)
         }
         return items
@@ -120,7 +121,6 @@ extension UILabel {
 extension MainViewController: PageboyViewControllerDataSource {
     
     func configureViewControllers() {
-        
         for page in iterateEnum(TabPage.self) {
             let pageViewController = PageViewController()
             pageViewController.page = page

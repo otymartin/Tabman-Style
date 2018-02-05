@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0920"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F8B8EC21374BEA91445B4A60A5169828"
+               BlueprintIdentifier = "C4815BCD62D2A8F30C422158034B498A"
                BuildableName = "Pods_Tabman_Style.framework"
                BlueprintName = "Pods-Tabman Style"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F8B8EC21374BEA91445B4A60A5169828"
+            BlueprintIdentifier = "C4815BCD62D2A8F30C422158034B498A"
             BuildableName = "Pods_Tabman_Style.framework"
             BlueprintName = "Pods-Tabman Style"
             ReferencedContainer = "container:Pods.xcodeproj">

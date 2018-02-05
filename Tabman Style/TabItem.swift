@@ -12,14 +12,11 @@ import Pageboy
 
 public struct TabItem {
     
-    public weak var view: UIView?
-    
     public var position: Position?
 
     public var button: TabmanButton
     
-    public init(button: TabmanButton, for tabman: Tabman) {
-        self.view = tabman
+    public init(button: TabmanButton) {
         self.button = button
         self.setInitialPosition()
     }

@@ -26,24 +26,23 @@ public enum Position {
     case farRight
     
     public func xPosition(for item: TabItem) -> CGFloat? {
-        guard let view = item.view else { return nil }
         switch self {
         case .left:
             return 16 + item.button.bounds.width
         case .offLeft:
             return -16
         case .centerLeft:
-            return -(view.bounds.width / 2)
+            return -(UIScreen.main.bounds.width / 2)
         case .center:
-            return view.bounds.width / 2
+            return UIScreen.main.bounds.width / 2
         case .right:
-            return view.bounds.width - 16
+            return UIScreen.main.bounds.width - 16
         case .offRight:
-            return view.bounds.width + 16
+            return UIScreen.main.bounds.width + 16
         case .centerRight:
-            return view.bounds.width + (view.bounds.width / 2)
+            return UIScreen.main.bounds.width + (UIScreen.main.bounds.width / 2)
         case .farRight:
-            return (view.bounds.width * 2) - 16
+            return (UIScreen.main.bounds.width * 2) - 16
         }
     }
     
