@@ -12,7 +12,7 @@ import Pageboy
 
 public struct TabItem {
     
-    public var view: UIView?
+    public weak var view: UIView?
     
     public var position: Position?
 

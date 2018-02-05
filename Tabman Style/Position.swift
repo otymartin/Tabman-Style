@@ -47,71 +47,71 @@ public enum Position {
         }
     }
     
-    public func toPosition(for item: TabItem, with direction: Direction) -> Position? {
+    public func toPosition(for item: TabItem, with direction: Direction) -> CGFloat? {
         
         switch self {
         case .left:
             switch direction {
             case .forward:
-                return Position.center
+                return Position.center.xPosition(for: item)
             case .reverse:
-                return Position.centerLeft
+                return Position.centerLeft.xPosition(for: item)
             default:
                 return nil
             }
         case .offLeft:
             switch direction {
             case .forward:
-                return Position.left
+                return Position.left.xPosition(for: item)
             case .reverse:
-                return Position.centerLeft
+                return Position.centerLeft.xPosition(for: item)
             default:
                 return nil
             }
         case .right:
             switch direction {
             case .forward:
-                return Position.offRight
+                return Position.offRight.xPosition(for: item)
             case .reverse:
-                return Position.centerLeft
+                return Position.centerLeft.xPosition(for: item)
             default:
                 return nil
             }
         case .offRight:
             switch direction {
             case .forward:
-                return Position.centerRight
+                return Position.centerRight.xPosition(for: item)
             case .reverse:
-                return Position.right
+                return Position.right.xPosition(for: item)
             default:
                 return nil
             }
         case .center:
             switch direction {
             case .forward:
-                return Position.right
+                return Position.right.xPosition(for: item)
             case .reverse:
-                return Position.left
+                return Position.left.xPosition(for: item)
             default:
                 return nil
             }
         case .centerRight:
             switch direction {
             case .forward:
-                return Position.farRight
+                return Position.farRight.xPosition(for: item)
             case .reverse:
-                return Position.offRight
+                return Position.offRight.xPosition(for: item)
             default:
                 return nil
             }
         case .farRight:
             if direction == .reverse {
-                return Position.offRight
+                return Position.offRight.xPosition(for: item)
             }
             return nil
         case .centerLeft:
             if direction == .forward {
-                return Position.offLeft
+                return Position.offLeft.xPosition(for: item)
             }
             return nil
         }

@@ -20,13 +20,24 @@ public class Tabman: UIView {
     
     public var currentPage: Int?
     
-    public var items: [TabItem] = []
+    public var one: TabItem!
     
-    public var currentPosition: CGPoint?
+    public var two: TabItem!
     
-    fileprivate var animator: UIViewPropertyAnimator?
+    public var three: TabItem!
     
-    public var delegate: TabmanResponder?
+    public var four: TabItem!
+    
+    public var currentPosition: CGPoint? {
+        return self.delegate?.currentPosition
+    }
+    fileprivate var forwardAnimator: UIViewPropertyAnimator?
+    
+    fileprivate var reverseAnimator: UIViewPropertyAnimator?
+    
+    public var responder: TabmanResponder?
+    
+    public weak var delegate: MainViewController?
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,56 +60,54 @@ extension Tabman {
     
     fileprivate func setup() {
         self.backgroundColor = .white
-        self.animator = UIViewPropertyAnimator()
+        self.one = TabItem(button: self.tabmanButton(for: .one), for: self)
+        self.two = TabItem(button: self.tabmanButton(for: .two), for: self)
+        self.three = TabItem(button: self.tabmanButton(for: .three), for: self)
+        self.four = TabItem(button: self.tabmanButton(for: .four), for: self)
+        self.layoutItems()
+        self.forwardAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: nil)
+        self.reverseAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: nil)
+    }
+    
+    private func tabmanButton(for page: TabPage) -> TabmanButton {
+        let button = TabmanButton()
+        button.configure(for: page)
+        return button
     }
     
     public func layoutItems() {
-        for item in items {
-            self.addSubview(item.button)
-            item.button.snp.makeConstraints({ [weak self] (make) in
-                guard let view = self else { return }
-                make.centerY.equalTo(view.snp.centerY)
-                if let position = item.position {
-                    switch position {
-                    case .left:
-                        make.leading.equalTo(view.snp.leading).offset(16)
-                    case .offLeft:
-                        make.trailing.equalTo(view.snp.leading).offset(16)
-                    case .centerLeft:
-                        make.centerX.equalTo(view.snp.leading).offset(-(view.bounds.width / 2))
-                    case .center:
-                        make.centerX.equalTo(view.snp.centerX)
-                    case .right:
-                        make.trailing.equalTo(view.snp.trailing).offset(-16)
-                    case .offRight:
-                        make.leading.equalTo(view.snp.trailing).offset(16)
-                    case .centerRight:
-                        make.trailing.equalTo(view.snp.trailing).offset(view.bounds.width / 2)
-                    case .farRight:
-                        make.trailing.equalTo(view.snp.trailing).offset(view.bounds.width - 16)
-                    }
-                }
-            })
-            item.button.setNeedsLayout()
-            item.button.layoutIfNeeded()
+        self.addSubview(self.one.button)
+        self.one.button.snp.makeConstraints { [weak self] (make) in
+            guard let view = self else { return }
+            make.centerY.equalTo(view.snp.centerY)
+            make.leading.equalTo(view.snp.leading).offset(16)
         }
+        
+        self.addSubview(self.two.button)
+        self.two.button.snp.makeConstraints { [weak self] (make) in
+            guard let view = self else { return }
+            make.center.equalTo(view.snp.center)
+        }
+        
+        self.addSubview(self.three.button)
+        self.three.button.snp.makeConstraints { [weak self] (make) in
+            guard let view = self else { return }
+            make.centerY.equalTo(view.snp.centerY)
+            make.trailing.equalTo(view.snp.trailing).offset(-16)
+        }
+        
+        self.addSubview(self.four.button)
+        self.four.button.snp.makeConstraints { [weak self] (make) in
+            guard let view = self else { return }
+            make.leading.equalTo(view.snp.trailing).offset(16)
+        }
+        
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
+        self.superview?.layoutIfNeeded()
     }
 }
 
-extension Tabman {
-    
-    private func interpolate(to position: Position, progress: CGFloat) {
-        for item in items {
-        }
-    }
-    
-    private func animate(item: TabItem, direction: Direction) -> UIViewPropertyAnimator {
-        let animator = UIViewPropertyAnimator(duration: 1, curve: .easeIn) {
-            item.button.center.x = item.position?.toPosition(for: item, with: direction)
-        }
-        animator.progre
-    }
-}
 
 extension Tabman: PageboyViewControllerDelegate {
     
@@ -106,12 +115,29 @@ extension Tabman: PageboyViewControllerDelegate {
     }
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
-        var progress = 1 - (self.currentPosition?.x ?? 0)
+        let progress = 1 - (self.currentPosition?.x ?? 0)
+        print(progress)
+        switch direction {
+        case .forward:
+            self.forwardAnimator?.fractionComplete = progress
+        case .reverse:
+            self.reverseAnimator?.fractionComplete = progress
+        default:
+            break
+        }
         
     }
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
-        
+        let progress = 1 - (self.currentPosition?.x ?? 0)
+        switch direction {
+        case .forward:
+            self.forwardAnimator?.fractionComplete = progress
+        case .reverse:
+            self.reverseAnimator?.fractionComplete = progress
+        default:
+            break
+        }
     }
 }
 

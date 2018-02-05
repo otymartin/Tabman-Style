@@ -11,7 +11,7 @@ import Tabman
 import Pageboy
 import SnapKit
 
-class MainViewController: TabmanViewController {
+public class MainViewController: TabmanViewController {
     
     var tabman: Tabman!
     var xLabel = UILabel()
@@ -29,26 +29,26 @@ class MainViewController: TabmanViewController {
         }
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         self.configureViewControllers()
         self.configureUI()
         self.dataSource = self
     }
     
-    override func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+    override public func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, willScrollToPageAt: index, direction: direction, animated: animated)
         self.tabman.pageboyViewController(pageboyViewController, willScrollToPageAt: index, direction: direction, animated: animated)
     }
     
-    override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+    override public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
         self.tabman.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
         self.xPosition = position.x
         
     }
     
-    override func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+    override public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
         self.tabman.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
         self.currentPage = index
@@ -59,7 +59,7 @@ extension MainViewController {
     
     func configureUI() {
         self.tabman = Tabman()
-        self.tabman.items = self.setItems()
+        self.tabman.delegate = self
         self.view.addSubview(self.tabman)
         self.tabman.snp.makeConstraints({ [weak self] (make) in
             guard let topLayoutGuide = self?.topLayoutGuide else { return }
@@ -70,7 +70,6 @@ extension MainViewController {
         })
         self.tabman.setNeedsLayout()
         self.tabman.layoutIfNeeded()
-        self.tabman.layoutItems()
         self.configureLabels()
     }
     
@@ -129,20 +128,18 @@ extension MainViewController: PageboyViewControllerDataSource {
         }
     }
     
-    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+    public func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return self.viewControllers.count
     }
     
-    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
+    public func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
         return self.viewControllers[index]
     }
     
-    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return Page.at(index: 2)
+    public func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
+        return Page.at(index: 0)
     }
 }
-
-
 
 
 
