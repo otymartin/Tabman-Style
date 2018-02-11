@@ -16,22 +16,22 @@ public enum TabPage {
     public var title: String {
         switch self {
         case .one:
-            return "One"
+            return "Profile"
         case .two:
-            return "Two"
+            return "People"
         case .three:
-            return "Three"
+            return "Standing"
         }
     }
     
     public var color: UIColor {
         switch self {
         case .one:
-            return .purple
+            return UIColor.white.withAlphaComponent(0)
         case .two:
-            return .blue
+            return .yellow
         case .three:
-            return .cyan
+            return .blue
         }
     }
 }

@@ -71,6 +71,7 @@ extension MainViewController {
         self.tabman.setNeedsLayout()
         self.tabman.layoutIfNeeded()
         self.configureLabels()
+        self.view.backgroundColor = .green
     }
     
     private func configureLabels() {

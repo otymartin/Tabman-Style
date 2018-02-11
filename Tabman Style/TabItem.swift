@@ -13,8 +13,10 @@ import Pageboy
 public struct TabItem {
     
     public var position: Position
-
+    
     public var button: TabmanButton
+    
+    public var direction: Direction = .forward
     
     public init(for position: Position, page: TabPage) {
         self.position = position
