@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A9288056EFE77166534101616ADE92F2"
+               BlueprintIdentifier = "CF5FA25DBC1EEB78A0A589F888553872"
                BuildableName = "Tabman.framework"
                BlueprintName = "Tabman"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A9288056EFE77166534101616ADE92F2"
+            BlueprintIdentifier = "CF5FA25DBC1EEB78A0A589F888553872"
             BuildableName = "Tabman.framework"
             BlueprintName = "Tabman"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -10,6 +10,7 @@ import UIKit
 import Tabman
 import Pageboy
 import SnapKit
+import Interpolate
 
 public protocol TabmanResponder: class {
     
@@ -24,7 +25,14 @@ public class Tabman: UIView {
     
     public var three: TabItem!
     
-    fileprivate var oneInterpolation: UIViewPropertyAnimator!
+    fileprivate var oneLeftToCenter: Interpolate?
+    fileprivate var oneCenterToRight: Interpolate?
+    fileprivate var oneRightToOffRight: Interpolate?
+    
+    fileprivate var twoCenterToRight: Interpolate?
+    fileprivate var twoRightToOffRight: Interpolate?
+    
+    fileprivate var threeToOffRight: Interpolate?
     
     public var currentPosition: CGPoint? {
         return self.delegate?.currentPosition
@@ -58,6 +66,7 @@ extension Tabman {
         self.two = TabItem(for: .center, page: .two)
         self.three = TabItem(for: .right, page: .three)
         self.layoutItems()
+        self.configureInterpolations()
     }
     
     public func layoutItems() {
@@ -86,83 +95,60 @@ extension Tabman {
         self.layoutIfNeeded()
         self.superview?.layoutIfNeeded()
     }
+
 }
 
 extension Tabman {
     
-    fileprivate func interpolateOne(direction: Direction, with progress: CGFloat) {
-        var toPosition = CGFloat()
-        var curve: UIViewAnimationCurve = .easeIn
-        
-        /*guard let currentPage = self.delegate?.currentPage else { return }
-        switch currentPage {
-        case 0:
-            switch direction {
-            case .forward:
-                toPosition =
-            }
-            toPosition = self.one.center
-            curve = .easeOut
-        case 1:
-            toPosition = self.one.left
-            curve = .easeInOut
-        case 2:
-            toPosition = self.one.center
-            curve = .easeOut
-        default:
-            break
-        }
-        self.oneInterpolation = UIViewPropertyAnimator(duration: 1, curve: curve, animations: {
-            self.one.button.bounds.origin.x = toPosition
-        })*/
-
+    fileprivate func configureInterpolations() {
+        self.configureOneLeftToCenter()
+        self.configureTwoCenterToRight()
     }
     
-    fileprivate func oneCompletion(progress: CGFloat) {
-        self.oneInterpolation.fractionComplete = progress
+    fileprivate func configureOneLeftToCenter(with direction: PageboyViewController.NavigationDirection? = nil) {
+        self.oneLeftToCenter = Interpolate(from: self.one.button.center.x, to: self.one.center, function: BasicInterpolation.linear, apply: { [weak self] (newPosition) in
+            self?.one.button.center.x = newPosition
+        })
     }
+    
+    fileprivate func configureTwoCenterToRight(with direction: PageboyViewController.NavigationDirection? = nil) {
+        self.twoCenterToRight = Interpolate(from: self.two.button.center.x, to: self.two.right, function: BasicInterpolation.linear, apply: { [weak self] (newPosition) in
+            self?.two.button.center.x = newPosition
+        })
+    }
+    
+    fileprivate func configureThreeToOffright(with direction: PageboyViewController.NavigationDirection? = nil) {
+        self.threeToOffRight = Interpolate(from: self.three.button.center.x, to: self.three.offRight, function: BasicInterpolation.linear, apply: { [weak self] (newPosition) in
+            self?.three.button.center.x = newPosition
+        })
+    }
+    
 }
 
 
 extension Tabman: PageboyViewControllerDelegate {
     
-    public func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+    public func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                      willScrollToPageAt index: Int,
+                                      direction: PageboyViewController.NavigationDirection,
+                                      animated: Bool) {
     }
     
-    public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction:
-        PageboyViewController.NavigationDirection, animated: Bool) {
+    public func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                      didScrollTo position: CGPoint,
+                                      direction: PageboyViewController.NavigationDirection,
+                                      animated: Bool) {
+        let progress = 1 - (position.x)
+        self.oneLeftToCenter?.progress = progress
+        self.twoCenterToRight?.progress = progress
+        self.threeToOffRight?.progress = progress
         
-        var direction = self.one.direction
-        switch direction {
-        case .forward:
-            direction = .forward
-        case .reverse:
-            direction = .reverse
-        default:
-            break
-        }
-        
-        guard self.one.direction == direction else {
-            self.interpolateOne(direction: direction, with: position.x)
-            return
-        }
-        
-        
-        /*guard var currentPage = self.delegate?.currentPage else { return }
-        var nextPage = CGFloat()
-        switch direction {
-        case .forward:
-            nextPage = CGFloat(integerLiteral: currentPage) += 1
-        case .reverse:
-            nextPage = CGFloat(integerLiteral: currentPage) += -1
-        default:
-            break
-        }
-        self.oneCompletion(progress: position.x)*/
-      
     }
     
-    public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+    public func pageboyViewController(_ pageboyViewController: PageboyViewController,
+                                      didScrollToPageAt index: Int,
+                                      direction: PageboyViewController.NavigationDirection,
+                                      animated: Bool) {
      
     }
 }

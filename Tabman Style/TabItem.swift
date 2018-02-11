@@ -16,7 +16,7 @@ public struct TabItem {
     
     public var button: TabmanButton
     
-    public var direction: Direction = .forward
+    public var direction: PageboyViewController.NavigationDirection = .forward
     
     public init(for position: Position, page: TabPage) {
         self.position = position
@@ -27,8 +27,12 @@ public struct TabItem {
 
 extension TabItem {
     
+    public var offLeft: CGFloat {
+        return -(16 + (self.button.bounds.width / 2))
+    }
+    
     public var left: CGFloat {
-        return 16 + self.button.bounds.width
+        return 16 + (self.button.bounds.width / 2)
     }
     
     public var center: CGFloat {
@@ -36,18 +40,18 @@ extension TabItem {
     }
     
     public var right: CGFloat {
-        return UIScreen.main.bounds.width - (16 + self.button.bounds.width)
+        return UIScreen.main.bounds.width - (16 + (self.button.bounds.width / 2))
     }
     
     public var offRight: CGFloat {
-        return UIScreen.main.bounds.width + (16 + self.button.bounds.width)
+        return UIScreen.main.bounds.width + (16 + (self.button.bounds.width / 2))
     }
     
     public var centerRight: CGFloat {
-        return UIScreen.main.bounds.width + (UIScreen.main.bounds.width / 2)
+        return UIScreen.main.bounds.width + (UIScreen.main.bounds.width / 2) - (self.button.bounds.width / 2)
     }
     
     public var farRight: CGFloat {
-        return (UIScreen.main.bounds.width * 2) - (16 + self.button.bounds.width)
+        return (UIScreen.main.bounds.width * 2) - (16 + (self.button.bounds.width / 2))
     }
 }

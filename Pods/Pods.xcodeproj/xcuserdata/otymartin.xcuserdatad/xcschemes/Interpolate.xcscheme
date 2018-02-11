@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4D199CD9EBC5D07B0E79A6553A94138C"
-               BuildableName = "TweenKit.framework"
-               BlueprintName = "TweenKit"
+               BlueprintIdentifier = "F724913454B5EBEABA7BC175A279A2AD"
+               BuildableName = "Interpolate.framework"
+               BlueprintName = "Interpolate"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4D199CD9EBC5D07B0E79A6553A94138C"
-            BuildableName = "TweenKit.framework"
-            BlueprintName = "TweenKit"
+            BlueprintIdentifier = "F724913454B5EBEABA7BC175A279A2AD"
+            BuildableName = "Interpolate.framework"
+            BlueprintName = "Interpolate"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -8,12 +8,6 @@
 
 import UIKit
 
-public enum Direction {
-    case neutral
-    case forward
-    case reverse
-}
-
 public enum Position {
     
     case left

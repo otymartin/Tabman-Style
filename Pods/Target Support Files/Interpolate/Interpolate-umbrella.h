@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "Interpolate.h"
 
-FOUNDATION_EXPORT double TweenKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char TweenKitVersionString[];
+FOUNDATION_EXPORT double InterpolateVersionNumber;
+FOUNDATION_EXPORT const unsigned char InterpolateVersionString[];
 
