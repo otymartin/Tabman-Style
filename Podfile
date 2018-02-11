@@ -6,7 +6,6 @@ target 'Tabman Style' do
   use_frameworks!
   pod 'Tabman'
   pod 'SnapKit'
-  pod 'Interpolate'
   # Pods for Tabman Style
 
   target 'Tabman StyleTests' do

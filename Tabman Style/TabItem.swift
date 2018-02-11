@@ -36,7 +36,7 @@ extension TabItem {
     }
     
     public var center: CGFloat {
-        return UIScreen.main.bounds.width / 2
+        return (UIScreen.main.bounds.width / 2)
     }
     
     public var right: CGFloat {

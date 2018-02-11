@@ -19,13 +19,8 @@ public class MainViewController: TabmanViewController {
     var pageLabel = UILabel()
     var viewControllers: [UIViewController] = []
     
-    fileprivate var oneLeftToCenter: Interpolate?
-    fileprivate var oneCenterToRight: Interpolate?
-    fileprivate var oneRightToOffRight: Interpolate?
-    
+    fileprivate var oneLeftToCenter: UIViewPropertyAnimator?
     fileprivate var twoCenterToRight: Interpolate?
-    fileprivate var twoRightToOffRight: Interpolate?
-    
     fileprivate var threeToOffRight: Interpolate?
 
     var xPosition: CGFloat = 0 {
@@ -55,9 +50,7 @@ public class MainViewController: TabmanViewController {
         self.xPosition = position.x
         
         let progress = 1 - (position.x)
-        self.oneLeftToCenter?.progress = progress
-        self.twoCenterToRight?.progress = progress
-        self.threeToOffRight?.progress = progress
+        self.oneLeftToCenter?.fractionComplete = progress
     }
     
     override public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
@@ -84,7 +77,11 @@ extension MainViewController {
         self.configureLabels()
         self.view.backgroundColor = .green
         self.configureInterpolations()
-
+        self.tabman.one.button.alpha = 0.4
+        self.tabman.two.button.alpha = 1
+        
+        print(self.tabman.three.button.frame)
+        print(self.tabman.three.offRight)
     }
     
     private func configureLabels() {
@@ -115,24 +112,12 @@ extension MainViewController {
     
     fileprivate func configureInterpolations() {
         self.configureOneLeftToCenter()
-        self.configureTwoCenterToRight()
+        
     }
     
     fileprivate func configureOneLeftToCenter(with direction: PageboyViewController.NavigationDirection? = nil) {
-        self.oneLeftToCenter = Interpolate(from: self.tabman.one.button.center.x, to: self.tabman.one.center, function: BasicInterpolation.easeOut, apply: { [weak self] (newPosition) in
-            self?.tabman.one.button.center.x = newPosition
-        })
-    }
-    
-    fileprivate func configureTwoCenterToRight(with direction: PageboyViewController.NavigationDirection? = nil) {
-        self.twoCenterToRight = Interpolate(from: self.tabman.two.button.center.x, to: self.tabman.two.right, function: BasicInterpolation.easeOut, apply: { [weak self] (newPosition) in
-            self?.tabman.two.button.center.x = newPosition
-        })
-    }
-    
-    fileprivate func configureThreeToOffright(with direction: PageboyViewController.NavigationDirection? = nil) {
-        self.threeToOffRight = Interpolate(from: self.tabman.three.button.center.x, to: self.tabman.three.offRight, function: BasicInterpolation.easeOut, apply: { [weak self] (newPosition) in
-            self?.tabman.three.button.center.x = newPosition
+        self.oneLeftToCenter = UIViewPropertyAnimator(duration: 1, dampingRatio: 0.7, animations: {
+            self.tabman.one.button.center.x = self.tabman.one.center
         })
     }
     
