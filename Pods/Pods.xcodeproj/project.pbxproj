@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -228,7 +228,7 @@
 /* Begin PBXFileReference section */
 		00306321C2D8CD9F2D5D4007211DB1F5 /* Pods-Tabman Style-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tabman Style-dummy.m"; sourceTree = "<group>"; };
 		00EB89B13906D13AB11B0FCC6BF8F6FC /* Pods-Tabman StyleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tabman StyleTests.release.xcconfig"; sourceTree = "<group>"; };
-		048B2E30D72C987D16978EE75C7FF251 /* Pageboy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pageboy.framework; path = Pageboy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		048B2E30D72C987D16978EE75C7FF251 /* Pageboy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pageboy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08759B0EF67A8420103C60A957577284 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
 		0FFE334F9C57A955A1B74AADDD3D1303 /* Pods-Tabman StyleTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tabman StyleTests-resources.sh"; sourceTree = "<group>"; };
 		113EE95505C263776C2FD8A06B2EC3B8 /* Pods-Tabman Style-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tabman Style-frameworks.sh"; sourceTree = "<group>"; };
@@ -288,15 +288,15 @@
 		548E2B5FE3838068AA102B74BE8530A2 /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		55CC3C2C5DB9B70C74EDCBFCA3B09832 /* IndexedMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IndexedMap.swift; path = Sources/Pageboy/Utilities/DataStructures/IndexedMap.swift; sourceTree = "<group>"; };
 		57608C27683275AAC890AF7B0E5CE805 /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
-		5813575FEC7F563DB52CA1FF0C3F9325 /* TweenKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = TweenKit.modulemap; sourceTree = "<group>"; };
+		5813575FEC7F563DB52CA1FF0C3F9325 /* TweenKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = TweenKit.modulemap; sourceTree = "<group>"; };
 		5816A28FB58CB03DFD16DA93A6066E69 /* TabmanBlockTabBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabmanBlockTabBar.swift; path = Sources/Tabman/TabmanBar/Styles/TabmanBlockTabBar.swift; sourceTree = "<group>"; };
 		58DB2B76A02B1DBEC1C1AE29D65ABBEF /* Tabman-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Tabman-prefix.pch"; sourceTree = "<group>"; };
 		5BEBF3477D02CAFA6FCEE558A6A46F13 /* ContentViewScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContentViewScrollView.swift; path = Sources/Tabman/Utilities/ContentViewScrollView.swift; sourceTree = "<group>"; };
 		5C0F52412126502ABAE8E6A9F82B485D /* AutoHideBarBehaviorActivist.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoHideBarBehaviorActivist.swift; path = Sources/Tabman/TabmanBar/Behaviors/Activists/AutoHideBarBehaviorActivist.swift; sourceTree = "<group>"; };
-		5C51608578C4590F64053E1FA8CB1626 /* AutoInsetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AutoInsetter.framework; path = AutoInsetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C51608578C4590F64053E1FA8CB1626 /* AutoInsetter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoInsetter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5F02F4E909ABCFABE4296C0595C9AF /* UIView+Localization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Localization.swift"; path = "Sources/Pageboy/Utilities/Extensions/UIView+Localization.swift"; sourceTree = "<group>"; };
 		5CAC2DA9971E20A5E1DBA251894263A9 /* TabmanBar+Styles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TabmanBar+Styles.swift"; path = "Sources/Tabman/TabmanBar/TabmanBar+Styles.swift"; sourceTree = "<group>"; };
-		5E69097AFE523810B07B9AEF3B925068 /* Pageboy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Pageboy.modulemap; sourceTree = "<group>"; };
+		5E69097AFE523810B07B9AEF3B925068 /* Pageboy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pageboy.modulemap; sourceTree = "<group>"; };
 		5F67C0AA3A1B4F0B0DCA7039136E997F /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		6033101F7AFD0D65E33BB80051BCF46F /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		611B5E27A84C1D43F1F60E0C6AE60C97 /* Pods-Tabman StyleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tabman StyleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -312,9 +312,9 @@
 		6FE3C10C03129D73D3CBAEBE447E9FD7 /* TabmanLineIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabmanLineIndicator.swift; path = Sources/Tabman/TabmanBar/Components/Indicator/Styles/TabmanLineIndicator.swift; sourceTree = "<group>"; };
 		7049612F2FAE4AE1885315CD9D64F2C6 /* Pageboy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pageboy-umbrella.h"; sourceTree = "<group>"; };
 		71CDBFA4725BBD1A706DF2EAA57E2624 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+AutoLayout.swift"; path = "Sources/Pageboy/Utilities/Extensions/UIView+AutoLayout.swift"; sourceTree = "<group>"; };
-		726EB6CE4E7BB4F8B2C0CF603B118631 /* TweenKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TweenKit.framework; path = TweenKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		726EB6CE4E7BB4F8B2C0CF603B118631 /* TweenKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TweenKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C0C66AE39EF80D9AF6C80644C1C10D /* ArcAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArcAction.swift; path = TweenKit/TweenKit/ArcAction.swift; sourceTree = "<group>"; };
-		73C3220E08FC897BD1A0D88325E5E996 /* Pods_Tabman_StyleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tabman_StyleTests.framework; path = "Pods-Tabman StyleTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73C3220E08FC897BD1A0D88325E5E996 /* Pods_Tabman_StyleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_StyleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74075DB6BFE4FC54F12B1FAF3F151F90 /* TweenKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TweenKit.xcconfig; sourceTree = "<group>"; };
 		749E1B8C5B25AB408E8A1FA30FD78536 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B35060C042E7F8F560776013B47EF34 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 		7E9F26139E9D8F1CB511883CB83849D5 /* UIView+Localization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Localization.swift"; path = "Sources/Tabman/Utilities/Extensions/UIView+Localization.swift"; sourceTree = "<group>"; };
 		7FEEBC26A9350C54618C07FB7B6C2705 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
 		810DCF0ED8E9FCF5D996BC30851350B8 /* Pageboy-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pageboy-prefix.pch"; sourceTree = "<group>"; };
-		81134D9986B72D75FBACD033A257043B /* AutoInsetter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AutoInsetter.modulemap; sourceTree = "<group>"; };
+		81134D9986B72D75FBACD033A257043B /* AutoInsetter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AutoInsetter.modulemap; sourceTree = "<group>"; };
 		848E715387AC7E265ABCFAEC3ED9C7ED /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
 		84987AD6415859710C9F41BB0357DF34 /* Easing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Easing.swift; path = TweenKit/TweenKit/Easing.swift; sourceTree = "<group>"; };
 		849D8E4737E581AE584FC788D1DEF77D /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
@@ -335,19 +335,19 @@
 		900EDEE9FFAC2ED66267EB1F54A150B2 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
 		906A2300DF005B99C6191D7F5C393D47 /* Pods-Tabman StyleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tabman StyleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		90CA6C5789B7DE419E0563A42C10F433 /* AutoInsetter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AutoInsetter.xcconfig; sourceTree = "<group>"; };
-		915CA26D873541DFE106F02029963ACD /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Tabman.framework; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		915CA26D873541DFE106F02029963ACD /* Tabman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tabman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9363BE66B76D81E901269C2E63B69E2D /* UIViewController+ScrollViewDetection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+ScrollViewDetection.swift"; path = "Sources/AutoInsetter/Utilities/UIViewController+ScrollViewDetection.swift"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93B88678F7C61260CC6DD4BD2D22F6DB /* UIScrollView+Interaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Interaction.swift"; path = "Sources/AutoInsetter/Utilities/UIScrollView+Interaction.swift"; sourceTree = "<group>"; };
 		94266130280AA175C4D08E6332A45B8A /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		96BB329EDC3CA7BDA916C3CEA420F5F9 /* TabmanBar+Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TabmanBar+Config.swift"; path = "Sources/Tabman/TabmanBar/Configuration/TabmanBar+Config.swift"; sourceTree = "<group>"; };
 		97CC6091D4BA94E7EAFD856444041A04 /* ActionSequence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionSequence.swift; path = TweenKit/TweenKit/ActionSequence.swift; sourceTree = "<group>"; };
 		99E2176F0794E9133649478275DE682E /* TabmanViewController+AutoInsetting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TabmanViewController+AutoInsetting.swift"; path = "Sources/Tabman/TabmanViewController+AutoInsetting.swift"; sourceTree = "<group>"; };
 		9A3DA4AF949643CEB38A9699F8B11145 /* TabmanBarTransitionStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabmanBarTransitionStore.swift; path = Sources/Tabman/TabmanBar/Transitioning/TabmanBarTransitionStore.swift; sourceTree = "<group>"; };
-		9BAE7E5098A5E18F5DCC7354D7EA61E2 /* Pods-Tabman StyleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Tabman StyleUITests.modulemap"; sourceTree = "<group>"; };
+		9BAE7E5098A5E18F5DCC7354D7EA61E2 /* Pods-Tabman StyleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Tabman StyleUITests.modulemap"; sourceTree = "<group>"; };
 		9D66FA3B1A2783018170778961701E64 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
 		9FCDCD1BFBA2FF209FB81BDE9AC4C717 /* TabmanIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabmanIndicator.swift; path = Sources/Tabman/TabmanBar/Components/Indicator/TabmanIndicator.swift; sourceTree = "<group>"; };
-		A12165D723F41206A354669D79685C2C /* Pods-Tabman Style.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Tabman Style.modulemap"; sourceTree = "<group>"; };
+		A12165D723F41206A354669D79685C2C /* Pods-Tabman Style.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Tabman Style.modulemap"; sourceTree = "<group>"; };
 		A166694B01B549C8078952FCEC53DB19 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A253A336A96B7FA9304FF8E3F8799899 /* PageboyAutoScroller.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageboyAutoScroller.swift; path = Sources/Pageboy/Components/PageboyAutoScroller.swift; sourceTree = "<group>"; };
 		A28700B12F79652E94881994C4A788A5 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
@@ -359,7 +359,7 @@
 		A6BD353716989C0735A35275B87521C4 /* PageboyViewController+Transitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PageboyViewController+Transitioning.swift"; path = "Sources/Pageboy/Extensions/PageboyViewController+Transitioning.swift"; sourceTree = "<group>"; };
 		A7EECCE0DD029A4456355968D56CA9B5 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		AA21F35A8F8E598B671BB71906D4203E /* ActionScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ActionScheduler.swift; path = TweenKit/TweenKit/ActionScheduler.swift; sourceTree = "<group>"; };
-		AA8E6D7ABDBD5585570713F5D0CE278F /* Pods_Tabman_StyleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tabman_StyleUITests.framework; path = "Pods-Tabman StyleUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8E6D7ABDBD5585570713F5D0CE278F /* Pods_Tabman_StyleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_StyleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABDA0B0217C4C0CC4E0ED0083105E814 /* AutoInsetSpec.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoInsetSpec.swift; path = Sources/AutoInsetter/AutoInsetSpec.swift; sourceTree = "<group>"; };
 		AC1F274C6FFB10BE9D53B2507D989A0D /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
 		AE0C70DF8144D4B5D28A1E9DB7CBA57D /* UIView+Layout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "Sources/Tabman/Utilities/Extensions/UIView+Layout.swift"; sourceTree = "<group>"; };
@@ -371,7 +371,7 @@
 		B43C367C6D86AE6D1A6D36EBE80A26FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4B4B0B930C19693F17DD1FA6444B58F /* RepeatForeverAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RepeatForeverAction.swift; path = TweenKit/TweenKit/RepeatForeverAction.swift; sourceTree = "<group>"; };
 		B6995E8B49D75AF773C1AF15D6B5BEF1 /* PageboyViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PageboyViewController.swift; path = Sources/Pageboy/PageboyViewController.swift; sourceTree = "<group>"; };
-		B741A18CBD98640FDB8017EED8F0F50C /* Pods_Tabman_Style.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tabman_Style.framework; path = "Pods-Tabman Style.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B741A18CBD98640FDB8017EED8F0F50C /* Pods_Tabman_Style.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Style.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B859B82D00246A050984F57221471AB9 /* Pods-Tabman StyleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Tabman StyleTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B88AEBCC824A41D0624AA193B57AEC36 /* TabmanStaticBarIndicatorTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabmanStaticBarIndicatorTransition.swift; path = Sources/Tabman/TabmanBar/Transitioning/IndicatorTransition/TabmanStaticBarIndicatorTransition.swift; sourceTree = "<group>"; };
 		B94D535272DF68C98CE5A4E45E90A50D /* BezierPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BezierPath.swift; path = TweenKit/TweenKit/BezierPath.swift; sourceTree = "<group>"; };
@@ -383,14 +383,14 @@
 		BF20A4AC059034172952A9C4DC703B56 /* Pods-Tabman Style.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tabman Style.debug.xcconfig"; sourceTree = "<group>"; };
 		BF35A199163C8577E9435675ED3EB67C /* Math.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Math.swift; path = TweenKit/TweenKit/Math.swift; sourceTree = "<group>"; };
 		BFE91A249D1E914427FC71EEC27CF76A /* TabmanTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabmanTransition.swift; path = Sources/Tabman/TabmanBar/Transitioning/TabmanTransition.swift; sourceTree = "<group>"; };
-		C1D10D07DDAB4CC226040BF7C2460ABD /* Pods-Tabman StyleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Tabman StyleTests.modulemap"; sourceTree = "<group>"; };
+		C1D10D07DDAB4CC226040BF7C2460ABD /* Pods-Tabman StyleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Tabman StyleTests.modulemap"; sourceTree = "<group>"; };
 		C2808C1D1A8359E34A3513286F4D713B /* AutoInsetter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AutoInsetter-umbrella.h"; sourceTree = "<group>"; };
 		C48FAF1FCBAC60F4838E7972DD435046 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		C4E54B8A2839CAA1E7A42C34E7C419CF /* SeparatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SeparatorView.swift; path = Sources/Tabman/TabmanBar/Components/Separator/SeparatorView.swift; sourceTree = "<group>"; };
 		C6ED4DF75C8EA58090D4F7594F1019A2 /* UIViewController+Pageboy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Pageboy.swift"; path = "Sources/Pageboy/Extensions/UIViewController+Pageboy.swift"; sourceTree = "<group>"; };
 		C752AE02E39FF3C8F7FBBA334062FD5F /* Tweenable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tweenable.swift; path = TweenKit/TweenKit/Tweenable.swift; sourceTree = "<group>"; };
 		C8B9B0465F21314A6AA9167A3187B9BB /* TabmanBlockIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabmanBlockIndicator.swift; path = Sources/Tabman/TabmanBar/Components/Indicator/Styles/TabmanBlockIndicator.swift; sourceTree = "<group>"; };
-		C8E3E48A14FDF7A9B9DD30D12D3EACAE /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SnapKit.modulemap; sourceTree = "<group>"; };
+		C8E3E48A14FDF7A9B9DD30D12D3EACAE /* SnapKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SnapKit.modulemap; sourceTree = "<group>"; };
 		C8F4537B5E6DDB60CB345A5E99864130 /* ColorUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorUtils.swift; path = Sources/Tabman/Utilities/ColorUtils.swift; sourceTree = "<group>"; };
 		CA312502C0FB5171E7812566F6616959 /* UIImage+Resize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+Resize.swift"; path = "Sources/Tabman/Utilities/Extensions/UIImage+Resize.swift"; sourceTree = "<group>"; };
 		CCA72423404CB8A8E0AA4BACF26E2AFE /* DelayAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelayAction.swift; path = TweenKit/TweenKit/DelayAction.swift; sourceTree = "<group>"; };
@@ -431,10 +431,10 @@
 		F9CEB5DB1EE3573E61FE11A2132253D0 /* TabmanButtonBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TabmanButtonBar.swift; path = Sources/Tabman/TabmanBar/Styles/Abstract/TabmanButtonBar.swift; sourceTree = "<group>"; };
 		FA59B7FD067FDFC17475DA736E7A584A /* Tabman-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Tabman-dummy.m"; sourceTree = "<group>"; };
 		FAB00252197A9EE623F3FB40DEF55469 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
-		FCE99236DA842BBA81BD067F6F821B0C /* Tabman.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Tabman.modulemap; sourceTree = "<group>"; };
+		FCE99236DA842BBA81BD067F6F821B0C /* Tabman.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Tabman.modulemap; sourceTree = "<group>"; };
 		FD8044714DCE86F14BE20EC53F0DF516 /* TabmanBar+Location.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TabmanBar+Location.swift"; path = "Sources/Tabman/TabmanBar/TabmanBar+Location.swift"; sourceTree = "<group>"; };
 		FD9C289B996845412E64B6AF9DF3E37B /* WeakWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WeakWrapper.swift; path = Sources/Pageboy/Utilities/DataStructures/WeakWrapper.swift; sourceTree = "<group>"; };
-		FE2031215402FE690D66DA9530FFE15C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2031215402FE690D66DA9530FFE15C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBC1E0C783ED4A0AA287C12DD936C1B /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -562,7 +562,6 @@
 				28C2714D09586091D952708D4644500C /* UILayoutSupport+Extensions.swift */,
 				7E253F218D60149EED82B5C889EF2493 /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -645,7 +644,6 @@
 				9363BE66B76D81E901269C2E63B69E2D /* UIViewController+ScrollViewDetection.swift */,
 				04B5660E5116D7100EB27195206E40D9 /* Support Files */,
 			);
-			name = AutoInsetter;
 			path = AutoInsetter;
 			sourceTree = "<group>";
 		};
@@ -799,7 +797,6 @@
 				52AD2362A04DCE2E76E9DA2F64F82208 /* UIViewController+AutoInsetting.swift */,
 				6E75FEE3A9F5BFD11833D798A0912D2D /* Support Files */,
 			);
-			name = Tabman;
 			path = Tabman;
 			sourceTree = "<group>";
 		};
@@ -846,7 +843,6 @@
 				FD9C289B996845412E64B6AF9DF3E37B /* WeakWrapper.swift */,
 				E2A74337A93019C3F3A8988AA4E35883 /* Support Files */,
 			);
-			name = Pageboy;
 			path = Pageboy;
 			sourceTree = "<group>";
 		};
@@ -878,7 +874,6 @@
 				18112FBFECF5251D8F35842EE64B1E51 /* YoyoAction.swift */,
 				C56388E7AB3DBFF455793CBCB383BFD4 /* Support Files */,
 			);
-			name = TweenKit;
 			path = TweenKit;
 			sourceTree = "<group>";
 		};
@@ -1105,7 +1100,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0920;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1841,6 +1836,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

@@ -18,22 +18,15 @@ public protocol TabmanResponder: class {
 
 public class Tabman: UIView {
     
-    public var currentPage: Int?
-    
     public var one: TabItem!
     
     public var two: TabItem!
     
     public var three: TabItem!
     
-    public var four: TabItem!
-    
     public var currentPosition: CGPoint? {
         return self.delegate?.currentPosition
     }
-    fileprivate var forwardAnimator: UIViewPropertyAnimator?
-    
-    fileprivate var reverseAnimator: UIViewPropertyAnimator?
     
     public var responder: TabmanResponder?
     
@@ -62,14 +55,8 @@ extension Tabman {
         self.one = TabItem(button: self.tabmanButton(for: .one))
         self.two = TabItem(button: self.tabmanButton(for: .two))
         self.three = TabItem(button: self.tabmanButton(for: .three))
-        self.four = TabItem(button: self.tabmanButton(for: .four))
+        
         self.layoutItems()
-        self.forwardAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: {
-            self.one.button.center.x = self.one.position?.toPosition(for: self.one, with: .forward) ?? 0
-        })
-        self.reverseAnimator = UIViewPropertyAnimator(duration: 1, curve: .easeInOut, animations: {
-            self.one.button.center.x = self.one.position?.toPosition(for: self.one, with: .reverse) ?? 0
-        })
     }
     
     private func tabmanButton(for page: TabPage) -> TabmanButton {
@@ -99,12 +86,6 @@ extension Tabman {
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }
         
-        self.addSubview(self.four.button)
-        self.four.button.snp.makeConstraints { [weak self] (make) in
-            guard let view = self else { return }
-            make.leading.equalTo(view.snp.trailing).offset(16)
-        }
-        
         self.setNeedsLayout()
         self.layoutIfNeeded()
         self.superview?.layoutIfNeeded()
@@ -119,28 +100,11 @@ extension Tabman: PageboyViewControllerDelegate {
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction:
         PageboyViewController.NavigationDirection, animated: Bool) {
-        let progress = 1 - (self.currentPosition?.x ?? 0)
-        switch direction {
-        case .forward:
-            self.forwardAnimator?.fractionComplete = progress
-        case .reverse:
-            self.reverseAnimator?.fractionComplete = progress
-        default:
-            break
-        }
-        
+      
     }
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
-        let progress = 1 - (self.currentPosition?.x ?? 0)
-        switch direction {
-        case .forward:
-            self.forwardAnimator?.fractionComplete = progress
-        case .reverse:
-            self.reverseAnimator?.fractionComplete = progress
-        default:
-            break
-        }
+     
     }
 }
 

@@ -125,7 +125,7 @@ extension MainViewController: PageboyViewControllerDataSource {
     }
     
     public func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return Page.at(index: 0)
+        return Page.at(index: 1)
     }
 }
 
