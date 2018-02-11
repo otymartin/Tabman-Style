@@ -12,27 +12,40 @@ import Pageboy
 
 public struct TabItem {
     
-    public var position: Position?
+    public var position: Position
 
     public var button: TabmanButton
     
-    public init(button: TabmanButton) {
-        self.button = button
-        self.setInitialPosition()
+    public init(for position: Position, page: TabPage) {
+        self.position = position
+        self.button = TabmanButton()
+        self.button.configure(for: page)
     }
 }
 
 extension TabItem {
     
-    fileprivate mutating func setInitialPosition() {
-        guard let page = self.button.page else { return }
-        switch page {
-        case .one:
-            self.position = .left
-        case .two:
-            self.position = .center
-        case .three:
-            self.position = .right
-        }
+    public var left: CGFloat {
+        return 16 + self.button.bounds.width
+    }
+    
+    public var center: CGFloat {
+        return UIScreen.main.bounds.width / 2
+    }
+    
+    public var right: CGFloat {
+        return UIScreen.main.bounds.width - (16 + self.button.bounds.width)
+    }
+    
+    public var offRight: CGFloat {
+        return UIScreen.main.bounds.width + (16 + self.button.bounds.width)
+    }
+    
+    public var centerRight: CGFloat {
+        return UIScreen.main.bounds.width + (UIScreen.main.bounds.width / 2)
+    }
+    
+    public var farRight: CGFloat {
+        return (UIScreen.main.bounds.width * 2) - (16 + self.button.bounds.width)
     }
 }

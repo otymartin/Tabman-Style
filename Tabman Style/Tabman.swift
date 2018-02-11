@@ -52,17 +52,10 @@ extension Tabman {
     
     fileprivate func setup() {
         self.backgroundColor = .white
-        self.one = TabItem(button: self.tabmanButton(for: .one))
-        self.two = TabItem(button: self.tabmanButton(for: .two))
-        self.three = TabItem(button: self.tabmanButton(for: .three))
-        
+        self.one = TabItem(for:.one)
+        self.two = TabItem(for: .two)
+        self.three = TabItem(for: .three)
         self.layoutItems()
-    }
-    
-    private func tabmanButton(for page: TabPage) -> TabmanButton {
-        let button = TabmanButton()
-        button.configure(for: page)
-        return button
     }
     
     public func layoutItems() {
@@ -73,7 +66,7 @@ extension Tabman {
             make.leading.equalTo(view.snp.leading).offset(16)
         }
         
-        self.addSubview(self.two.button)
+        /*self.addSubview(self.two.button)
         self.two.button.snp.makeConstraints { [weak self] (make) in
             guard let view = self else { return }
             make.center.equalTo(view.snp.center)
@@ -84,7 +77,7 @@ extension Tabman {
             guard let view = self else { return }
             make.centerY.equalTo(view.snp.centerY)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
-        }
+        }*/
         
         self.setNeedsLayout()
         self.layoutIfNeeded()
