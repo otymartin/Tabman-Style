@@ -23,6 +23,7 @@
 		A14FA0752026AB3F00798449 /* TabPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0742026AB3F00798449 /* TabPage.swift */; };
 		A14FA0772026B08100798449 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0762026B08100798449 /* PageViewController.swift */; };
 		A14FA07920279CE300798449 /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA07820279CE300798449 /* Position.swift */; };
+		A164BE3C2030FA870022B909 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A164BE3B2030FA870022B909 /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		A14FA0742026AB3F00798449 /* TabPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPage.swift; sourceTree = "<group>"; };
 		A14FA0762026B08100798449 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		A14FA07820279CE300798449 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		A164BE3B2030FA870022B909 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		AB995E009411ECD87166B71F /* Pods_Tabman_Style.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_Style.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC200710B51E755EE20AE64A /* Pods_Tabman_StyleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tabman_StyleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0211853E320BCD4462034D /* Pods-Tabman StyleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tabman StyleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tabman StyleUITests/Pods-Tabman StyleUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				A14FA07820279CE300798449 /* Position.swift */,
 				A14FA0742026AB3F00798449 /* TabPage.swift */,
 				A14FA0722026931D00798449 /* TabmanButton.swift */,
+				A164BE3B2030FA870022B909 /* UIViewControllerExtensions.swift */,
 				A14FA0442024D76D00798449 /* Main.storyboard */,
 				A14FA0472024D76D00798449 /* Assets.xcassets */,
 				A14FA0492024D76D00798449 /* LaunchScreen.storyboard */,
@@ -378,6 +381,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Tabman Style/Pods-Tabman Style-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
+				"${BUILT_PRODUCTS_DIR}/Interpolate/Interpolate.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
@@ -385,6 +389,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Interpolate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
@@ -486,6 +491,7 @@
 				A14FA0772026B08100798449 /* PageViewController.swift in Sources */,
 				A14FA0732026931D00798449 /* TabmanButton.swift in Sources */,
 				A14FA0712026662F00798449 /* TabItem.swift in Sources */,
+				A164BE3C2030FA870022B909 /* UIViewControllerExtensions.swift in Sources */,
 				A14FA0432024D76D00798449 /* MainViewController.swift in Sources */,
 				A14FA06F2024FFD000798449 /* Tabman.swift in Sources */,
 				A14FA07920279CE300798449 /* Position.swift in Sources */,

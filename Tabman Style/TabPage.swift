@@ -16,11 +16,11 @@ public enum TabPage {
     public var title: String {
         switch self {
         case .one:
-            return "Profile"
+            return "One"
         case .two:
-            return "People"
+            return "Two"
         case .three:
-            return "Standing"
+            return "Three"
         }
     }
     

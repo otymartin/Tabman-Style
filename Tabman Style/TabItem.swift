@@ -44,7 +44,7 @@ extension TabItem {
     }
     
     public var offRight: CGFloat {
-        return UIScreen.main.bounds.width + (16 + (self.button.bounds.width / 2))
+        return UIScreen.main.bounds.width + (16 + (self.button.bounds.width / 2 ))
     }
     
     public var centerRight: CGFloat {

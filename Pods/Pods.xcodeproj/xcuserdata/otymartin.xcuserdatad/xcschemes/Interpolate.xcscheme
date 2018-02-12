@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CCA5A1FD6DE073D02D62DDF63B3B1AD2"
-               BuildableName = "Pods_Tabman_StyleTests.framework"
-               BlueprintName = "Pods-Tabman StyleTests"
+               BlueprintIdentifier = "F724913454B5EBEABA7BC175A279A2AD"
+               BuildableName = "Interpolate.framework"
+               BlueprintName = "Interpolate"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CCA5A1FD6DE073D02D62DDF63B3B1AD2"
-            BuildableName = "Pods_Tabman_StyleTests.framework"
-            BlueprintName = "Pods-Tabman StyleTests"
+            BlueprintIdentifier = "F724913454B5EBEABA7BC175A279A2AD"
+            BuildableName = "Interpolate.framework"
+            BlueprintName = "Interpolate"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
