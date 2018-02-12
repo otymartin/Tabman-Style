@@ -19,7 +19,7 @@ public class TabmanButton: UIButton {
     public var page: TabPage? {
         didSet {
             guard let page = self.page else { return }
-            self.titleLabel?.text = page.title
+            self.setTitle(page.title, for: .normal)
         }
     }
     
