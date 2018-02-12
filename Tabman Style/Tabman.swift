@@ -13,7 +13,7 @@ import SnapKit
 
 public protocol TabmanResponder: class {
     
-    func didTap(item: TabItem, at position: Position, in page: TabPage)
+    func didTap(item: TabmanButton, at position: Position, in page: TabPage)
 }
 
 public class Tabman: UIView {

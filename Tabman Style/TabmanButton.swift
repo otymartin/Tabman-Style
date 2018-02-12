@@ -16,7 +16,12 @@ public protocol TabmanButtonDelegate: class {
 
 public class TabmanButton: UIButton {
     
-    public var page: TabPage?
+    public var page: TabPage? {
+        didSet {
+            guard let page = self.page else { return }
+            self.titleLabel?.text = page.title
+        }
+    }
     
     public weak var delegate: TabmanButtonDelegate?
     
@@ -27,6 +32,7 @@ public class TabmanButton: UIButton {
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.configure()
     }
     
     public override func layoutSubviews() {
