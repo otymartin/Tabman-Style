@@ -18,7 +18,6 @@
 		A14FA0562024D76D00798449 /* Tabman_StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0552024D76D00798449 /* Tabman_StyleTests.swift */; };
 		A14FA0612024D76D00798449 /* Tabman_StyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0602024D76D00798449 /* Tabman_StyleUITests.swift */; };
 		A14FA06F2024FFD000798449 /* Tabman.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA06E2024FFD000798449 /* Tabman.swift */; };
-		A14FA0712026662F00798449 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0702026662F00798449 /* TabItem.swift */; };
 		A14FA0732026931D00798449 /* TabmanButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0722026931D00798449 /* TabmanButton.swift */; };
 		A14FA0752026AB3F00798449 /* TabPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0742026AB3F00798449 /* TabPage.swift */; };
 		A14FA0772026B08100798449 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FA0762026B08100798449 /* PageViewController.swift */; };
@@ -64,7 +63,6 @@
 		A14FA0602024D76D00798449 /* Tabman_StyleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabman_StyleUITests.swift; sourceTree = "<group>"; };
 		A14FA0622024D76D00798449 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14FA06E2024FFD000798449 /* Tabman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabman.swift; sourceTree = "<group>"; };
-		A14FA0702026662F00798449 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		A14FA0722026931D00798449 /* TabmanButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabmanButton.swift; sourceTree = "<group>"; };
 		A14FA0742026AB3F00798449 /* TabPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPage.swift; sourceTree = "<group>"; };
 		A14FA0762026B08100798449 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +143,6 @@
 				A14FA0422024D76D00798449 /* MainViewController.swift */,
 				A14FA0762026B08100798449 /* PageViewController.swift */,
 				A14FA06E2024FFD000798449 /* Tabman.swift */,
-				A14FA0702026662F00798449 /* TabItem.swift */,
 				A14FA07820279CE300798449 /* Position.swift */,
 				A14FA0742026AB3F00798449 /* TabPage.swift */,
 				A14FA0722026931D00798449 /* TabmanButton.swift */,
@@ -490,7 +487,6 @@
 				A14FA0752026AB3F00798449 /* TabPage.swift in Sources */,
 				A14FA0772026B08100798449 /* PageViewController.swift in Sources */,
 				A14FA0732026931D00798449 /* TabmanButton.swift in Sources */,
-				A14FA0712026662F00798449 /* TabItem.swift in Sources */,
 				A164BE3C2030FA870022B909 /* UIViewControllerExtensions.swift in Sources */,
 				A14FA0432024D76D00798449 /* MainViewController.swift in Sources */,
 				A14FA06F2024FFD000798449 /* Tabman.swift in Sources */,

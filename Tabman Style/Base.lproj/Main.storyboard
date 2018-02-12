@@ -17,12 +17,55 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pH1-gT-LPJ" customClass="Tabman" customModule="Tabman_Style" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ug-5l-d9x" customClass="TabmanButton" customModule="Tabman_Style" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vTq-Ao-npE" customClass="TabmanButton" customModule="Tabman_Style" customModuleProvider="target">
+                                        <rect key="frame" x="164" y="7" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37A-qE-ehz" customClass="TabmanButton" customModule="Tabman_Style" customModuleProvider="target">
+                                        <rect key="frame" x="313" y="8" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="0ug-5l-d9x" firstAttribute="leading" secondItem="pH1-gT-LPJ" secondAttribute="leading" constant="16" id="0eW-MK-Xdn"/>
+                                    <constraint firstItem="0ug-5l-d9x" firstAttribute="top" secondItem="pH1-gT-LPJ" secondAttribute="top" constant="7" id="6JW-8v-67U"/>
+                                    <constraint firstItem="vTq-Ao-npE" firstAttribute="leading" secondItem="0ug-5l-d9x" secondAttribute="trailing" constant="102" id="6vL-eM-ewf"/>
+                                    <constraint firstAttribute="trailing" secondItem="37A-qE-ehz" secondAttribute="trailing" constant="16" id="Aa2-Rj-xKr"/>
+                                    <constraint firstItem="vTq-Ao-npE" firstAttribute="centerY" secondItem="pH1-gT-LPJ" secondAttribute="centerY" id="Hb4-Fh-3hO"/>
+                                    <constraint firstItem="vTq-Ao-npE" firstAttribute="centerX" secondItem="pH1-gT-LPJ" secondAttribute="centerX" id="JDz-45-gMs"/>
+                                    <constraint firstAttribute="bottom" secondItem="0ug-5l-d9x" secondAttribute="bottom" constant="7" id="awo-S2-JPI"/>
+                                    <constraint firstAttribute="height" constant="44" id="e79-gB-WMi"/>
+                                    <constraint firstAttribute="bottom" secondItem="37A-qE-ehz" secondAttribute="bottom" constant="6" id="vFH-KA-YwV"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pH1-gT-LPJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3bq-IN-SXw"/>
+                            <constraint firstItem="pH1-gT-LPJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dh2-aa-BZi"/>
+                            <constraint firstItem="pH1-gT-LPJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kCr-em-adl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="one" destination="0ug-5l-d9x" id="6al-Vs-krS"/>
+                        <outlet property="tabman" destination="pH1-gT-LPJ" id="mV1-e3-VkA"/>
+                        <outlet property="three" destination="37A-qE-ehz" id="RiK-0u-Elt"/>
+                        <outlet property="two" destination="vTq-Ao-npE" id="afu-Lf-YVr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

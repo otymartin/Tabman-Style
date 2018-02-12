@@ -27,11 +27,11 @@ public enum TabPage {
     public var color: UIColor {
         switch self {
         case .one:
-            return .white
+            return .green
         case .two:
-            return .white
+            return .yellow
         case .three:
-            return .white
+            return .blue
         }
     }
 }

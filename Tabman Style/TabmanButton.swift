@@ -22,10 +22,11 @@ public class TabmanButton: UIButton {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        self.configure()
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     public override func layoutSubviews() {
@@ -36,12 +37,10 @@ public class TabmanButton: UIButton {
 
 extension TabmanButton {
     
-    public func configure(for page: TabPage) {
-        self.page = page
+    public func configure() {
         self.setTitleColor(UIColor.black.withAlphaComponent(0.9), for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
         self.addTarget(self, action: #selector(self.Tap), for: .touchUpInside)
-        self.setTitle()
     }
     
     @objc private func Tap() {
@@ -49,8 +48,32 @@ extension TabmanButton {
         self.delegate?.didTapButton(for: page)
     }
     
-    fileprivate func setTitle() {
-        guard let page = self.page else { return }
-        self.setTitle(page.title, for: .normal)
+    public var offLeft: CGFloat {
+        return -(16 + (self.bounds.width / 2))
     }
+    
+    public var left: CGFloat {
+        return 16 + (self.bounds.width / 2)
+    }
+    
+    public var superCenter: CGFloat {
+        return (UIScreen.main.bounds.width / 2)
+    }
+    
+    public var right: CGFloat {
+        return UIScreen.main.bounds.width - (16 + (self.bounds.width / 2))
+    }
+    
+    public var offRight: CGFloat {
+        return UIScreen.main.bounds.width + (16 + (self.bounds.width / 2 ))
+    }
+    
+    public var centerRight: CGFloat {
+        return UIScreen.main.bounds.width + (UIScreen.main.bounds.width / 2) - (self.bounds.width / 2)
+    }
+    
+    public var farRight: CGFloat {
+        return (UIScreen.main.bounds.width * 2) - (16 + (self.bounds.width / 2))
+    }
+
 }

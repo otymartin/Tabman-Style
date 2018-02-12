@@ -14,7 +14,12 @@ import Interpolate
 
 public class MainViewController: TabmanViewController {
     
-    var tabman: Tabman!
+    
+    @IBOutlet weak var tabman: UIView!
+    @IBOutlet weak var one: TabmanButton!
+    @IBOutlet weak var two: TabmanButton!
+    @IBOutlet weak var three: TabmanButton!
+    
     var xLabel = UILabel()
     var pageLabel = UILabel()
     var viewControllers: [UIViewController] = []
@@ -51,69 +56,38 @@ public class MainViewController: TabmanViewController {
     
     override public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
+        
         self.xPosition = position.x
         
-        guard let currentPage = self.currentPage, position.x >= 0 && position.x <= 2 else { return }
-        
-        var progress = 1 - (position.x)
-        if currentPage == 1 && direction == .reverse || currentPage == 0 && direction == .forward {
+        //if currentPage == 1 && direction == .reverse && position.x < 1 || currentPage == 0 && direction == .forward {
+            let progress = 1 - (position.x)
             self.oneLeftToCenter?.progress = progress
             self.twoCenterToRight?.progress = progress
             self.threeRightToOffRight?.progress = progress
-        }
+        //}
         
-        progress = position.x - 1
-        if currentPage == 1 && direction == .forward || currentPage == 2 && direction == .reverse {
-            self.oneLeftToOffLeft?.progress = progress
-            self.twoCenterToLeft?.progress = progress
-            self.threeRightToCenter?.progress = progress
-            
-        }
+        //if currentPage == 1 && direction == .forward && position.x > 1 || currentPage == 2 && direction == .reverse {
+            let completion = position.x - 1
+            self.oneLeftToOffLeft?.progress = completion
+            self.twoCenterToLeft?.progress = completion
+            self.threeRightToCenter?.progress = completion
+        //}
     }
     
     override public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         super.pageboyViewController(pageboyViewController, didScrollToPageAt: index, direction: direction, animated: animated)
         self.currentPage = index
-        
-        guard let position = self.currentPosition, let currentPage = self.currentPage, position.x >= 0 && position.x <= 2 else { return }
-        
-        var progress = 1 - (position.x)
-        if currentPage == 1 && direction == .reverse || currentPage == 0 && direction == .forward {
-            self.oneLeftToCenter?.progress = progress
-            self.twoCenterToRight?.progress = progress
-            self.threeRightToOffRight?.progress = progress
-        }
-        
-        progress = position.x - 1
-        if currentPage == 1 && direction == .forward || currentPage == 2 && direction == .reverse {
-            self.oneLeftToOffLeft?.progress = progress
-            self.twoCenterToLeft?.progress = progress
-            self.threeRightToCenter?.progress = progress
-            
-        }
     }
 }
 
 extension MainViewController {
     
     func configureUI() {
-        self.tabman = Tabman()
-        self.tabman.delegate = self
-        self.view.addSubview(self.tabman)
-        self.tabman.snp.makeConstraints({ [weak self] (make) in
-            guard let topLayoutGuide = self?.topLayoutGuide else { return }
-            make.top.equalTo(topLayoutGuide.snp.bottom)
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
-            make.height.equalTo(44)
-        })
-        self.tabman.setNeedsLayout()
-        self.tabman.layoutIfNeeded()
         self.configureLabels()
         self.configureInterpolations()
-        self.tabman.one.button.alpha = 0.4
-        self.tabman.two.button.alpha = 1
-        self.tabman.three.button.alpha = 0.4
+        self.one.alpha = 0.4
+        self.two.alpha = 1
+        self.three.alpha = 0.4
     }
     
     private func configureLabels() {
@@ -132,12 +106,6 @@ extension MainViewController {
             make.centerX.equalTo(view.snp.centerX)
         }
     }
-    
-    fileprivate func tabmanButton(for page: TabPage) -> TabmanButton {
-        let button = TabmanButton()
-        button.configure(for: page)
-        return button
-    }
 }
 
 extension MainViewController {
@@ -152,38 +120,39 @@ extension MainViewController {
     }
     
     fileprivate func configureOneLeftToCenter() {
-        self.oneLeftToCenter = Interpolate(from: self.tabman.one.button.center.x, to: self.tabman.one.offRight, function:  BasicInterpolation.linear , apply: { (position) in
-            self.tabman.one.button.center.x = position
+        
+        self.oneLeftToCenter = Interpolate(from: self.one.center.x, to: self.one.offRight, apply: { (position) in
+            self.one.center.x = position
         })
     }
     
     fileprivate func configureTwoCenterToRight() {
-        self.twoCenterToRight = Interpolate(from: self.tabman.two.button.center.x, to: self.tabman.two.centerRight, function:  BasicInterpolation.linear, apply: { (position) in
-            self.tabman.two.button.center.x = position
+        self.twoCenterToRight = Interpolate(from: self.two.center.x, to: self.two.centerRight, apply: { (position) in
+            self.two.center.x = position
         })
     }
     
     fileprivate func configureThreeRightToOffRight() {
-        self.threeRightToOffRight = Interpolate(from: self.tabman.three.button.center.x, to: self.tabman.three.farRight, function:  BasicInterpolation.linear, apply: { (position) in
-            self.tabman.three.button.center.x = position
+        self.threeRightToOffRight = Interpolate(from: self.three.center.x, to: self.three.farRight, apply: { (position) in
+            self.three.center.x = position
         })
     }
     
     fileprivate func configureOneLeftToOffLeft() {
-        self.oneLeftToOffLeft = Interpolate(from: self.tabman.one.button.center.x, to: self.tabman.one.offLeft, function:  BasicInterpolation.linear , apply: { (position) in
-            self.tabman.one.button.center.x = position
+        self.oneLeftToOffLeft = Interpolate(from: self.one.center.x, to: self.one.offLeft, apply: { (position) in
+            self.one.center.x = position
         })
     }
     
     fileprivate func configureTwoCenterToLeft() {
-        self.twoCenterToLeft = Interpolate(from: self.tabman.two.button.center.x, to: self.tabman.two.left, function:  BasicInterpolation.linear, apply: { (position) in
-            self.tabman.two.button.center.x = position
+        self.twoCenterToLeft = Interpolate(from: self.two.center.x, to: self.two.left, apply: { (position) in
+            self.two.center.x = position
         })
     }
     
     fileprivate func configureThreeRightToCenter() {
-        self.threeRightToCenter = Interpolate(from: self.tabman.three.button.center.x, to: self.tabman.three.center, function:  BasicInterpolation.linear, apply: { (position) in
-            self.tabman.three.button.center.x = position
+        self.threeRightToCenter = Interpolate(from: self.three.center.x, to: self.three.superCenter, apply: { (position) in
+            self.three.center.x = position
         })
     }
     
