@@ -27,6 +27,7 @@ public class MainViewController: TabmanViewController {
     var pageLabel = UILabel()
     var viewControllers: [UIViewController] = []
     
+    // Group 1
     fileprivate var oneLeftToOffRight: Interpolate?
     fileprivate var oneLeftToOffRightAlpha: Interpolate?
     
@@ -37,13 +38,19 @@ public class MainViewController: TabmanViewController {
     
     fileprivate var fourOffRightToRight: Interpolate?
     
+    // Group 2
     fileprivate var oneLeftToOffLeft: Interpolate?
+    fileprivate var oneOffLeftToCenterLeft: Interpolate?
     
     fileprivate var twoCenterToLeft: Interpolate?
     fileprivate var twoCenterToLeftAlpha: Interpolate?
+    fileprivate var twoLeftToOffLeft: Interpolate?
     
     fileprivate var threeRightToCenter:Interpolate?
     fileprivate var threeRightToCenterAlpha: Interpolate?
+    fileprivate var threeCenterToLeft: Interpolate?
+    
+    fileprivate var fourRightToCenter: Interpolate?
 
     var xPosition: CGFloat = 0 {
         didSet {
@@ -84,11 +91,16 @@ public class MainViewController: TabmanViewController {
             //self.fourOffRightToRight?.progress = progress
         } else {
             self.oneLeftToOffLeft?.progress = completion
+            self.oneOffLeftToCenterLeft?.progress = completion
             self.twoCenterToLeftAlpha?.progress = completion
             self.twoCenterToLeft?.progress = completion
+            self.twoLeftToOffLeft?.progress = completion
             self.threeRightToCenter?.progress = completion
             self.threeRightToCenterAlpha?.progress = completion
+            self.threeCenterToLeft?.progress = completion
             self.fourOffRightToRight?.progress = completion
+            self.fourRightToCenter?.progress = completion
+            
         }
         
     
@@ -179,6 +191,10 @@ extension MainViewController {
         self.oneLeftToOffLeft = Interpolate(from: self.one.center.x, to: self.one.offLeft, function: BasicInterpolation.linear, apply: { (position) in
             self.one.center.x = position
         })
+        
+        self.oneOffLeftToCenterLeft = Interpolate(from: self.one.center.x, to: self.one.centerLeft, function: BasicInterpolation.linear, apply: { (position) in
+            self.one.center.x = position
+        })
     }
     
     fileprivate func configureTwoCenterToLeft() {
@@ -188,6 +204,10 @@ extension MainViewController {
         self.twoCenterToLeftAlpha = Interpolate(from: 1, to: 0.4, apply: { (alpha) in
             self.two.alpha = alpha
         })
+        self.twoLeftToOffLeft = Interpolate(from: self.two.center.x, to: self.two.offLeft, function: BasicInterpolation.linear, apply: { (position) in
+            self.two.center.x = position
+        })
+        
     }
     
     fileprivate func configureThreeRightToCenter() {
@@ -196,6 +216,12 @@ extension MainViewController {
         })
         self.threeRightToCenterAlpha = Interpolate(from: 0.4, to: 1, apply: { (alpha) in
             self.three.alpha = alpha
+        })
+        self.threeCenterToLeft = Interpolate(from: self.three.center.x, to: self.two.left, function: BasicInterpolation.linear, apply: { (position) in
+            self.three.center.x = position
+        })
+        self.fourRightToCenter = Interpolate(from: self.four.center.x, to: self.four.superCenter, function: BasicInterpolation.linear, apply: { (position) in
+            self.four.center.x = position
         })
     }
     
