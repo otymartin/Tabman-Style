@@ -19,6 +19,9 @@ public class MainViewController: TabmanViewController {
     @IBOutlet weak var one: TabmanButton!
     @IBOutlet weak var two: TabmanButton!
     @IBOutlet weak var three: TabmanButton!
+    @IBOutlet weak var four: TabmanButton!
+    
+    var emojiLabel = UILabel()
     
     var xLabel = UILabel()
     var pageLabel = UILabel()
@@ -31,6 +34,8 @@ public class MainViewController: TabmanViewController {
     fileprivate var twoCenterToCenterRightAlpha: Interpolate?
     
     fileprivate var threeRightToFarRight: Interpolate?
+    
+    fileprivate var fourOffRightToRight: Interpolate?
     
     fileprivate var oneLeftToOffLeft: Interpolate?
     
@@ -76,12 +81,14 @@ public class MainViewController: TabmanViewController {
             self.twoCenterToCenterRight?.progress = progress
             self.twoCenterToCenterRightAlpha?.progress = progress
             self.threeRightToFarRight?.progress = progress
+            //self.fourOffRightToRight?.progress = progress
         } else {
             self.oneLeftToOffLeft?.progress = completion
             self.twoCenterToLeftAlpha?.progress = completion
             self.twoCenterToLeft?.progress = completion
             self.threeRightToCenter?.progress = completion
             self.threeRightToCenterAlpha?.progress = completion
+            self.fourOffRightToRight?.progress = completion
         }
         
     
@@ -101,6 +108,7 @@ extension MainViewController {
         self.one.page = .one
         self.two.page = .two
         self.three.page = .three
+        self.four.page = .four
         self.one.alpha = 0.4
         self.two.alpha = 1
         self.three.alpha = 0.4
@@ -126,10 +134,11 @@ extension MainViewController {
 
 extension MainViewController {
     
-    fileprivate func configureInterpolations() {
+    public func configureInterpolations() {
         self.configureOneLeftToOffRight()
         self.configureTwoCenterToSuperCenter()
         self.configureThreeRightToFarRight()
+        self.configureFourOffRightToRight()
         
         self.configureOneLeftToOffLeft()
         self.configureTwoCenterToLeft()
@@ -157,6 +166,12 @@ extension MainViewController {
     fileprivate func configureThreeRightToFarRight() {
         self.threeRightToFarRight = Interpolate(from: self.three.center.x, to: self.three.farRight, function: BasicInterpolation.linear, apply: { (position) in
             self.three.center.x = position
+        })
+    }
+    
+    fileprivate func configureFourOffRightToRight() {
+        self.fourOffRightToRight = Interpolate(from: self.four.center.x, to: self.four.right, function: BasicInterpolation.linear, apply: { (position) in
+            self.four.center.x = position
         })
     }
     
