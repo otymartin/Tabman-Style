@@ -91,16 +91,11 @@ public class MainViewController: TabmanViewController {
             //self.fourOffRightToRight?.progress = progress
         } else {
             self.oneLeftToOffLeft?.progress = completion
-            self.oneOffLeftToCenterLeft?.progress = completion
             self.twoCenterToLeftAlpha?.progress = completion
             self.twoCenterToLeft?.progress = completion
-            self.twoLeftToOffLeft?.progress = completion
             self.threeRightToCenter?.progress = completion
             self.threeRightToCenterAlpha?.progress = completion
-            self.threeCenterToLeft?.progress = completion
-            self.fourOffRightToRight?.progress = completion
-            self.fourRightToCenter?.progress = completion
-            
+            self.fourOffRightToRight?.progress = completion            
         }
         
     
@@ -147,47 +142,19 @@ extension MainViewController {
 extension MainViewController {
     
     public func configureInterpolations() {
-        self.configureOneLeftToOffRight()
-        self.configureTwoCenterToSuperCenter()
-        self.configureThreeRightToFarRight()
-        self.configureFourOffRightToRight()
+        self.configureOneGoingLeft()
+        self.configureTwoGoingLeft()
+        self.configureThreeGoingLeft()
+        self.configureFourGoingLeft()
         
-        self.configureOneLeftToOffLeft()
-        self.configureTwoCenterToLeft()
-        self.configureThreeRightToCenter()
+        
+        self.configureOneGoingRight()
+        self.configureTwoGoingRight()
+        self.configureThreeGoingRight()
+        self.configureFourGoingRight()
     }
     
-    fileprivate func configureOneLeftToOffRight() {
-        self.oneLeftToOffRight = Interpolate(from: self.one.center.x, to: self.one.offRight, function: BasicInterpolation.linear, apply: { (position) in
-            self.one.center.x = position
-        })
-        self.oneLeftToOffRightAlpha = Interpolate(from: 0.4, to: 1, function: BasicInterpolation.linear, apply: { (alpha) in
-            self.one.alpha = alpha
-        })
-    }
-    
-    fileprivate func configureTwoCenterToSuperCenter() {
-        self.twoCenterToCenterRight = Interpolate(from: self.two.center.x, to: self.two.centerRight, function: BasicInterpolation.linear, apply: { (position) in
-            self.two.center.x = position
-        })
-        self.twoCenterToCenterRightAlpha = Interpolate(from: 1, to: 0.4, apply: { (alpha) in
-            self.two.alpha = alpha
-        })
-    }
-    
-    fileprivate func configureThreeRightToFarRight() {
-        self.threeRightToFarRight = Interpolate(from: self.three.center.x, to: self.three.farRight, function: BasicInterpolation.linear, apply: { (position) in
-            self.three.center.x = position
-        })
-    }
-    
-    fileprivate func configureFourOffRightToRight() {
-        self.fourOffRightToRight = Interpolate(from: self.four.center.x, to: self.four.right, function: BasicInterpolation.linear, apply: { (position) in
-            self.four.center.x = position
-        })
-    }
-    
-    fileprivate func configureOneLeftToOffLeft() {
+    fileprivate func configureOneGoingLeft() {
         self.oneLeftToOffLeft = Interpolate(from: self.one.center.x, to: self.one.offLeft, function: BasicInterpolation.linear, apply: { (position) in
             self.one.center.x = position
         })
@@ -197,7 +164,16 @@ extension MainViewController {
         })
     }
     
-    fileprivate func configureTwoCenterToLeft() {
+    fileprivate func configureOneGoingRight() {
+        self.oneLeftToOffRight = Interpolate(from: self.one.center.x, to: self.one.offRight, function: BasicInterpolation.linear, apply: { (position) in
+            self.one.center.x = position
+        })
+        self.oneLeftToOffRightAlpha = Interpolate(from: 0.4, to: 1, function: BasicInterpolation.linear, apply: { (alpha) in
+            self.one.alpha = alpha
+        })
+    }
+    
+    fileprivate func configureTwoGoingLeft() {
         self.twoCenterToLeft = Interpolate(from: self.two.center.x, to: self.two.left, function: BasicInterpolation.linear, apply: { (position) in
             self.two.center.x = position
         })
@@ -207,10 +183,19 @@ extension MainViewController {
         self.twoLeftToOffLeft = Interpolate(from: self.two.center.x, to: self.two.offLeft, function: BasicInterpolation.linear, apply: { (position) in
             self.two.center.x = position
         })
+    }
+    
+    fileprivate func configureTwoGoingRight() {
+        self.twoCenterToCenterRight = Interpolate(from: self.two.center.x, to: self.two.centerRight, function: BasicInterpolation.linear, apply: { (position) in
+            self.two.center.x = position
+        })
+        self.twoCenterToCenterRightAlpha = Interpolate(from: 1, to: 0.4, apply: { (alpha) in
+            self.two.alpha = alpha
+        })
         
     }
     
-    fileprivate func configureThreeRightToCenter() {
+    fileprivate func configureThreeGoingLeft() {
         self.threeRightToCenter = Interpolate(from: self.three.center.x, to: self.three.superCenter, function: BasicInterpolation.linear, apply: { (position) in
             self.three.center.x = position
         })
@@ -223,6 +208,22 @@ extension MainViewController {
         self.fourRightToCenter = Interpolate(from: self.four.center.x, to: self.four.superCenter, function: BasicInterpolation.linear, apply: { (position) in
             self.four.center.x = position
         })
+    }
+    
+    fileprivate func configureThreeGoingRight() {
+        self.threeRightToFarRight = Interpolate(from: self.three.center.x, to: self.three.farRight, function: BasicInterpolation.linear, apply: { (position) in
+            self.three.center.x = position
+        })
+    }
+    
+    fileprivate func configureFourGoingLeft() {
+        self.fourOffRightToRight = Interpolate(from: self.four.center.x, to: self.four.right, function: BasicInterpolation.linear, apply: { (position) in
+            self.four.center.x = position
+        })
+    }
+    
+    fileprivate func configureFourGoingRight() {
+        
     }
     
 }
