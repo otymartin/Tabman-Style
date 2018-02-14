@@ -27,30 +27,29 @@ public class MainViewController: TabmanViewController {
     var pageLabel = UILabel()
     var viewControllers: [UIViewController] = []
     
-    // Group 1
-    fileprivate var oneLeftToOffRight: Interpolate?
-    fileprivate var oneLeftToOffRightAlpha: Interpolate?
+    /// PAGE 1 to 0
+    var oneLeftToOffRight: Interpolate?
+    var oneLeftToOffRightAlpha: Interpolate?
+    var twoCenterToCenterRight: Interpolate?
+    var twoCenterToCenterRightAlpha: Interpolate?
+    var threeRightToFarRight: Interpolate?
+    var fourOffRightToFarOffRight: Interpolate?
+
+    /// Page 1 to 2
+    var oneLeftToOffLeft: Interpolate?
+    var twoCenterToLeft: Interpolate?
+    var twoCenterToLeftAlpha: Interpolate?
+    var threeRightToCenter: Interpolate?
+    var threeRightToCenterAlpha: Interpolate?
+    var fourOffRightToRight: Interpolate?
     
-    fileprivate var twoCenterToCenterRight: Interpolate?
-    fileprivate var twoCenterToCenterRightAlpha: Interpolate?
-    
-    fileprivate var threeRightToFarRight: Interpolate?
-    
-    fileprivate var fourOffRightToRight: Interpolate?
-    
-    // Group 2
-    fileprivate var oneLeftToOffLeft: Interpolate?
-    fileprivate var oneOffLeftToCenterLeft: Interpolate?
-    
-    fileprivate var twoCenterToLeft: Interpolate?
-    fileprivate var twoCenterToLeftAlpha: Interpolate?
-    fileprivate var twoLeftToOffLeft: Interpolate?
-    
-    fileprivate var threeRightToCenter:Interpolate?
-    fileprivate var threeRightToCenterAlpha: Interpolate?
-    fileprivate var threeCenterToLeft: Interpolate?
-    
-    fileprivate var fourRightToCenter: Interpolate?
+    /// Page 2 to 3
+    var oneOffLeftToCenterLeft: Interpolate?
+    var twoLeftToOffLeft: Interpolate?
+    var threeCenterToLeft: Interpolate?
+    var threeCenterToLeftAlpha: Interpolate?
+    var fourRightToCenter: Interpolate?
+    var fourRightToCenterAlpha: Interpolate?
 
     var xPosition: CGFloat = 0 {
         didSet {
@@ -79,26 +78,37 @@ public class MainViewController: TabmanViewController {
         
         self.xPosition = position.x
         
-        let progress = 1 - (position.x)
-        let completion = position.x - 1
+        let progressTo0 = 1 - (position.x)
+        let progressTo2 = position.x - 1
+        let progressTo3 = position.x - 2
         
-        if progress >= 0 {
-            self.oneLeftToOffRight?.progress = progress
-            self.oneLeftToOffRightAlpha?.progress = progress
-            self.twoCenterToCenterRight?.progress = progress
-            self.twoCenterToCenterRightAlpha?.progress = progress
-            self.threeRightToFarRight?.progress = progress
-            //self.fourOffRightToRight?.progress = progress
-        } else {
-            self.oneLeftToOffLeft?.progress = completion
-            self.twoCenterToLeftAlpha?.progress = completion
-            self.twoCenterToLeft?.progress = completion
-            self.threeRightToCenter?.progress = completion
-            self.threeRightToCenterAlpha?.progress = completion
-            self.fourOffRightToRight?.progress = completion            
+        if progressTo0 >= 0 && position.x <= 1 {
+            print("😡")
+            self.oneLeftToOffRight?.progress = progressTo0
+            self.oneLeftToOffRightAlpha?.progress = progressTo0
+            self.twoCenterToCenterRight?.progress = progressTo0
+            self.twoCenterToCenterRightAlpha?.progress = progressTo0
+            self.threeRightToFarRight?.progress = progressTo0
+            self.fourOffRightToFarOffRight?.progress = progressTo0
         }
-        
-    
+        if progressTo2 >= 0 && position.x >= 1 && position.x <= 2 {
+            print("👿")
+            self.oneLeftToOffLeft?.progress = progressTo2
+            self.twoCenterToLeft?.progress = progressTo2
+            self.twoCenterToLeftAlpha?.progress = progressTo2
+            self.threeRightToCenter?.progress = progressTo2
+            self.threeRightToCenterAlpha?.progress = progressTo2
+            self.fourOffRightToRight?.progress = progressTo2
+        }
+        print(progressTo3)
+        if progressTo3 >= 0 && position.x > 2 {
+            print("😃")
+            self.oneOffLeftToCenterLeft?.progress = progressTo3
+            self.twoLeftToOffLeft?.progress = progressTo3
+            self.threeCenterToLeft?.progress = progressTo3
+            self.fourRightToCenter?.progress = progressTo3
+            self.fourRightToCenterAlpha?.progress = progressTo3
+        }
     }
     
     override public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
@@ -142,50 +152,21 @@ extension MainViewController {
 extension MainViewController {
     
     public func configureInterpolations() {
-        self.configureOneGoingLeft()
-        self.configureTwoGoingLeft()
-        self.configureThreeGoingLeft()
-        self.configureFourGoingLeft()
-        
-        
-        self.configureOneGoingRight()
-        self.configureTwoGoingRight()
-        self.configureThreeGoingRight()
-        self.configureFourGoingRight()
+        self.configurePage1to0()
+        self.configurePage1to2()
+        self.configurePage2to3()
     }
     
-    fileprivate func configureOneGoingLeft() {
-        self.oneLeftToOffLeft = Interpolate(from: self.one.center.x, to: self.one.offLeft, function: BasicInterpolation.linear, apply: { (position) in
-            self.one.center.x = position
-        })
-        
-        self.oneOffLeftToCenterLeft = Interpolate(from: self.one.center.x, to: self.one.centerLeft, function: BasicInterpolation.linear, apply: { (position) in
-            self.one.center.x = position
-        })
-    }
-    
-    fileprivate func configureOneGoingRight() {
+    fileprivate func configurePage1to0() {
+        /// Profile LEFT to OFFRIGHT
         self.oneLeftToOffRight = Interpolate(from: self.one.center.x, to: self.one.offRight, function: BasicInterpolation.linear, apply: { (position) in
             self.one.center.x = position
         })
         self.oneLeftToOffRightAlpha = Interpolate(from: 0.4, to: 1, function: BasicInterpolation.linear, apply: { (alpha) in
             self.one.alpha = alpha
         })
-    }
-    
-    fileprivate func configureTwoGoingLeft() {
-        self.twoCenterToLeft = Interpolate(from: self.two.center.x, to: self.two.left, function: BasicInterpolation.linear, apply: { (position) in
-            self.two.center.x = position
-        })
-        self.twoCenterToLeftAlpha = Interpolate(from: 1, to: 0.4, apply: { (alpha) in
-            self.two.alpha = alpha
-        })
-        self.twoLeftToOffLeft = Interpolate(from: self.two.center.x, to: self.two.offLeft, function: BasicInterpolation.linear, apply: { (position) in
-            self.two.center.x = position
-        })
-    }
-    
-    fileprivate func configureTwoGoingRight() {
+        
+        /// People CENTER to CENTERRIGHT
         self.twoCenterToCenterRight = Interpolate(from: self.two.center.x, to: self.two.centerRight, function: BasicInterpolation.linear, apply: { (position) in
             self.two.center.x = position
         })
@@ -193,41 +174,74 @@ extension MainViewController {
             self.two.alpha = alpha
         })
         
+        /// Standing RIGHT to FARRIGHT
+        self.threeRightToFarRight = Interpolate(from: self.three.center.x, to: self.three.farRight, function: BasicInterpolation.linear, apply: { (position) in
+            self.three.center.x = position
+        })
+        
+        /// Invite OFFRIGHT to FAROFFRIGHT
+        self.fourOffRightToRight = Interpolate(from: self.four.center.x, to: self.four.farOffRight, function: BasicInterpolation.linear, apply: { (position) in
+            self.four.center.x = position
+        })
     }
     
-    fileprivate func configureThreeGoingLeft() {
+    fileprivate func configurePage1to2() {
+        /// Profile LEFT to OFFLEFT
+        self.oneLeftToOffLeft = Interpolate(from: self.one.center.x, to: self.one.offLeft, function: BasicInterpolation.linear, apply: { (position) in
+            self.one.center.x = position
+        })
+        
+        /// People CENTER to LEFT
+        self.twoCenterToLeft = Interpolate(from: self.two.center.x, to: self.two.left, function: BasicInterpolation.linear, apply: { (position) in
+            self.two.center.x = position
+        })
+        self.twoCenterToLeftAlpha = Interpolate(from: 1, to: 0.4, apply: { (alpha) in
+            self.two.alpha = alpha
+        })
+        
+        /// Standing RIGHT to CENTER
         self.threeRightToCenter = Interpolate(from: self.three.center.x, to: self.three.superCenter, function: BasicInterpolation.linear, apply: { (position) in
             self.three.center.x = position
         })
         self.threeRightToCenterAlpha = Interpolate(from: 0.4, to: 1, apply: { (alpha) in
             self.three.alpha = alpha
         })
-        self.threeCenterToLeft = Interpolate(from: self.three.center.x, to: self.two.left, function: BasicInterpolation.linear, apply: { (position) in
-            self.three.center.x = position
-        })
-        self.fourRightToCenter = Interpolate(from: self.four.center.x, to: self.four.superCenter, function: BasicInterpolation.linear, apply: { (position) in
-            self.four.center.x = position
-        })
-    }
-    
-    fileprivate func configureThreeGoingRight() {
-        self.threeRightToFarRight = Interpolate(from: self.three.center.x, to: self.three.farRight, function: BasicInterpolation.linear, apply: { (position) in
-            self.three.center.x = position
-        })
-    }
-    
-    fileprivate func configureFourGoingLeft() {
+        
+        
+        /// Invite OFFRIGHT to RIGHT
         self.fourOffRightToRight = Interpolate(from: self.four.center.x, to: self.four.right, function: BasicInterpolation.linear, apply: { (position) in
             self.four.center.x = position
         })
     }
     
-    fileprivate func configureFourGoingRight() {
+    fileprivate func configurePage2to3() {
+        /// Profile OFFLEFT to CENTERLEFT
+        self.oneOffLeftToCenterLeft = Interpolate(from: self.one.offLeft, to: self.one.centerLeft, function: BasicInterpolation.linear, apply: { (position) in
+            self.one.center.x = position
+        })
         
+        /// People LEFT to OFFLEFT
+        self.twoLeftToOffLeft = Interpolate(from: self.two.left, to: self.two.offLeft, function: BasicInterpolation.linear, apply: { (position) in
+            self.two.center.x = position
+        })
+        
+        /// Standing CENTER to LEFT
+        self.threeCenterToLeft = Interpolate(from: self.three.superCenter, to: self.three.left, function: BasicInterpolation.linear, apply: { (position) in
+            self.three.center.x = position
+        })
+        self.threeCenterToLeftAlpha = Interpolate(from: 1, to: 0.4, apply: { [weak self] (alpha) in
+            self?.three.alpha = alpha
+        })
+        
+        /// Invite RIGHT to CENTER
+        self.fourRightToCenter = Interpolate(from: self.four.right, to: self.four.superCenter, function: BasicInterpolation.linear, apply: { (position) in
+            self.four.center.x = position
+        })
+        self.fourRightToCenterAlpha = Interpolate(from: 0.4, to: 1, apply: { [weak self] (alpha) in
+            self?.four.alpha = alpha
+        })
     }
-    
 }
-
 
 extension UILabel {
     
