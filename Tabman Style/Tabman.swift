@@ -11,23 +11,14 @@ import Tabman
 import Pageboy
 import SnapKit
 
-public protocol TabmanResponder: class {
-    
-    func didTap(item: TabmanButton, at position: Position, in page: TabPage)
-}
-
 public class Tabman: UIView {
     
     public var currentPosition: CGPoint? {
         return self.delegate?.currentPosition
     }
-    
-    public var responder: TabmanResponder?
-    
+        
     public weak var delegate: MainViewController?
-    
   
-    
 }
 
 

@@ -51,6 +51,10 @@ public class MainViewController: TabmanViewController {
     var threeCenterToLeftAlpha: Interpolate?
     var fourRightToCenter: Interpolate?
     var fourRightToCenterAlpha: Interpolate?
+    
+    
+    /// Page 3 to 4
+    
 
     var xPosition: CGFloat = 0 {
         didSet {
@@ -123,6 +127,7 @@ extension MainViewController {
         self.two.page = .two
         self.three.page = .three
         self.four.page = .four
+        self.five.page = .five
         self.one.alpha = 0.4
         self.two.alpha = 1
         self.three.alpha = 0.4

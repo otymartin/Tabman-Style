@@ -34,11 +34,34 @@ public class TabmanButton: UIButton {
     }
 }
 
+extension CGFloat {
+    
+    public func divided(by: CGFloat) -> CGFloat {
+        return self / by
+    }
+    
+    public func add(_ number: CGFloat) -> CGFloat {
+        return self + number
+    }
+    
+    public func subtract(_ number: CGFloat) -> CGFloat {
+        return self - number
+    }
+}
+
 extension TabmanButton {
+    
+    private var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
     
     public func configure() {
         self.setTitleColor(UIColor.black.withAlphaComponent(0.9), for: .normal)
         self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
+    }
+    
+    public var farLeft: CGFloat {
+        return -((self.screenWidth + self.screenWidth.divided(by: 2)) - 16)
     }
     
     public var centerLeft: CGFloat {
@@ -76,5 +99,16 @@ extension TabmanButton {
     public var farOffRight: CGFloat {
         return (UIScreen.main.bounds.width * 2) + (16 + (self.bounds.width / 2))
     }
+    
+    public var farCenterRight: CGFloat {
+        return (self.screenWidth * 2) + (self.screenWidth.divided(by: 2).add(self.bounds.width.divided(by: 2)))
+    }
 
 }
+
+
+
+
+
+
+
