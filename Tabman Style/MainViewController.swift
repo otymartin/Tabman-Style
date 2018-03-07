@@ -35,6 +35,7 @@ public class MainViewController: TabmanViewController {
     var twoCenterToCenterRightAlpha: Interpolate?
     var threeRightToFarRight: Interpolate?
     var fourOffRightToFarOffRight: Interpolate?
+    var fiveCenterRightToFarRight: Interpolate?
 
     /// Page 1 to 2
     var oneLeftToOffLeft: Interpolate?
@@ -43,6 +44,7 @@ public class MainViewController: TabmanViewController {
     var threeRightToCenter: Interpolate?
     var threeRightToCenterAlpha: Interpolate?
     var fourOffRightToRight: Interpolate?
+    var fiveCenterRightToOffRight: Interpolate?
     
     /// Page 2 to 3
     var oneOffLeftToCenterLeft: Interpolate?
@@ -51,6 +53,7 @@ public class MainViewController: TabmanViewController {
     var threeCenterToLeftAlpha: Interpolate?
     var fourRightToCenter: Interpolate?
     var fourRightToCenterAlpha: Interpolate?
+    var fiveOffRightToRight: Interpolate?
     
     
     /// Page 3 to 4
@@ -93,6 +96,7 @@ public class MainViewController: TabmanViewController {
         let progressTo0 = 1 - (position.x)
         let progressTo2 = position.x - 1
         let progressTo3 = position.x - 2
+        let progressTo4 = position.x - 3
         
         if progressTo0 >= 0 && position.x <= 1 {
             self.oneLeftToOffRight?.progress = progressTo0
@@ -101,6 +105,7 @@ public class MainViewController: TabmanViewController {
             self.twoCenterToCenterRightAlpha?.progress = progressTo0
             self.threeRightToFarRight?.progress = progressTo0
             self.fourOffRightToFarOffRight?.progress = progressTo0
+            self.fiveCenterRightToFarRight?.progress = progressTo0
         }
         if progressTo2 >= 0 && position.x >= 1 && position.x <= 2 {
             self.oneLeftToOffLeft?.progress = progressTo2
@@ -109,6 +114,7 @@ public class MainViewController: TabmanViewController {
             self.threeRightToCenter?.progress = progressTo2
             self.threeRightToCenterAlpha?.progress = progressTo2
             self.fourOffRightToRight?.progress = progressTo2
+            self.fiveCenterRightToOffRight?.progress = progressTo2
         }
         if progressTo3 >= 0 && position.x >= 2 {
             self.oneOffLeftToCenterLeft?.progress = progressTo3
@@ -116,6 +122,16 @@ public class MainViewController: TabmanViewController {
             self.threeCenterToLeft?.progress = progressTo3
             self.fourRightToCenter?.progress = progressTo3
             self.fourRightToCenterAlpha?.progress = progressTo3
+            self.fiveOffRightToRight?.progress = progressTo3
+        }
+        if progressTo4 >= 0 && position.x >= 3 {
+            self.oneCenterleftToFarLeft?.progress = progressTo4
+            self.twoOffLeftToCenterLeft?.progress = progressTo4
+            self.threeLeftToOffLeft?.progress = progressTo4
+            self.fourCenterToLeft?.progress = progressTo4
+            self.fourCenterToLeftAlpha?.progress = progressTo4
+            self.fiveRightToCenter?.progress = progressTo4
+            self.fiveRightToCenterAlpha?.progress = progressTo4
         }
     }
     
@@ -164,9 +180,11 @@ extension MainViewController {
         self.configurePage1to0()
         self.configurePage1to2()
         self.configurePage2to3()
+        self.configurePage3To4()
     }
     
     fileprivate func configurePage1to0() {
+        
         /// Profile LEFT to OFFRIGHT
         self.oneLeftToOffRight = Interpolate(from: self.one.center.x, to: self.one.offRight, function: BasicInterpolation.linear, apply: { (position) in
             self.one.center.x = position
@@ -183,15 +201,21 @@ extension MainViewController {
             self.two.alpha = alpha
         })
         
-        /// Standing RIGHT to FARRIGHT
+        /// Fans RIGHT to FARRIGHT
         self.threeRightToFarRight = Interpolate(from: self.three.center.x, to: self.three.farRight, function: BasicInterpolation.linear, apply: { (position) in
             self.three.center.x = position
         })
         
-        /// Invite OFFRIGHT to FAROFFRIGHT
+        /// Standing OFFRIGHT to FAROFFRIGHT
         self.fourOffRightToRight = Interpolate(from: self.four.center.x, to: self.four.farOffRight, function: BasicInterpolation.linear, apply: { (position) in
             self.four.center.x = position
         })
+        
+        /// Invite CENTERRIGHT to FARRIGHT
+        self.fiveCenterRightToOffRight = Interpolate(from: self.five.center.x, to: self.five.farRight, apply: { [weak self] (position) in
+            self?.five.center.x = position
+        })
+        
     }
     
     fileprivate func configurePage1to2() {
@@ -208,7 +232,7 @@ extension MainViewController {
             self.two.alpha = alpha
         })
         
-        /// Standing RIGHT to CENTER
+        /// Fans RIGHT to CENTER
         self.threeRightToCenter = Interpolate(from: self.three.center.x, to: self.three.superCenter, function: BasicInterpolation.linear, apply: { (position) in
             self.three.center.x = position
         })
@@ -216,10 +240,14 @@ extension MainViewController {
             self.three.alpha = alpha
         })
         
-        
-        /// Invite OFFRIGHT to RIGHT
+        /// Standing OFFRIGHT to RIGHT
         self.fourOffRightToRight = Interpolate(from: self.four.center.x, to: self.four.right, function: BasicInterpolation.linear, apply: { (position) in
             self.four.center.x = position
+        })
+        
+        /// Invite CENTERRIGHT to OFFRIGHT
+        self.fiveCenterRightToOffRight = Interpolate(from: self.five.center.x, to: self.five.offRight, apply: { [weak self] (position) in
+            self?.five.center.x = position
         })
     }
     
@@ -234,7 +262,7 @@ extension MainViewController {
             self.two.center.x = position
         })
         
-        /// Standing CENTER to LEFT
+        /// Fans CENTER to LEFT
         self.threeCenterToLeft = Interpolate(from: self.three.superCenter, to: self.three.left, function: BasicInterpolation.linear, apply: { (position) in
             self.three.center.x = position
         })
@@ -242,13 +270,19 @@ extension MainViewController {
             self?.three.alpha = alpha
         })
         
-        /// Invite RIGHT to CENTER
+        /// Standing RIGHT to CENTER
         self.fourRightToCenter = Interpolate(from: self.four.right, to: self.four.superCenter, function: BasicInterpolation.linear, apply: { (position) in
             self.four.center.x = position
         })
         self.fourRightToCenterAlpha = Interpolate(from: 0.4, to: 1, apply: { [weak self] (alpha) in
             self?.four.alpha = alpha
         })
+        
+        /// Invite OFFRight to RIGHT
+        self.fiveOffRightToRight = Interpolate(from: self.five.offRight, to: self.five.right, apply: { [weak self] (position) in
+            self?.five.center.x = position
+        })
+        
     }
     
     fileprivate func configurePage3To4() {
