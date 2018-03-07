@@ -40,16 +40,32 @@ extension CGFloat {
         return self / by
     }
     
-    public func add(_ number: CGFloat) -> CGFloat {
+    public func plus(_ number: CGFloat) -> CGFloat {
         return self + number
     }
     
-    public func subtract(_ number: CGFloat) -> CGFloat {
+    public func minus(_ number: CGFloat) -> CGFloat {
         return self - number
+    }
+    
+    public func multiply(by: CGFloat) -> CGFloat {
+        return self * by
+    }
+    
+    public var negative: CGFloat {
+        return -self
     }
 }
 
 extension TabmanButton {
+    
+    private var margin: CGFloat {
+        return 16
+    }
+    
+    private var width: CGFloat {
+        return self.bounds.width
+    }
     
     private var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
@@ -61,7 +77,7 @@ extension TabmanButton {
     }
     
     public var farLeft: CGFloat {
-        return -((self.screenWidth + self.screenWidth.divided(by: 2)) - 16)
+        return self.screenWidth.plus(self.screenWidth.divided(by: 2)).minus(self.margin).negative
     }
     
     public var centerLeft: CGFloat {
@@ -101,7 +117,7 @@ extension TabmanButton {
     }
     
     public var farCenterRight: CGFloat {
-        return (self.screenWidth * 2) + (self.screenWidth.divided(by: 2).add(self.bounds.width.divided(by: 2)))
+        return self.screenWidth.multiply(by: 2).plus(self.screenWidth.divided(by: 2).plus(self.width.divided(by: 2)))
     }
 
 }

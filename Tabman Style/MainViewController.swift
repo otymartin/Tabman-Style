@@ -54,6 +54,13 @@ public class MainViewController: TabmanViewController {
     
     
     /// Page 3 to 4
+    var oneCenterleftToFarLeft: Interpolate?
+    var twoOffLeftToCenterLeft: Interpolate?
+    var threeLeftToOffLeft: Interpolate?
+    var fourCenterToLeft: Interpolate?
+    var fourCenterToLeftAlpha: Interpolate?
+    var fiveRightToCenter: Interpolate?
+    var fiveRightToCenterAlpha: Interpolate?
     
 
     var xPosition: CGFloat = 0 {
@@ -242,6 +249,44 @@ extension MainViewController {
         self.fourRightToCenterAlpha = Interpolate(from: 0.4, to: 1, apply: { [weak self] (alpha) in
             self?.four.alpha = alpha
         })
+    }
+    
+    fileprivate func configurePage3To4() {
+        
+        /// Profile CENTERLEFT to FARLEFT
+        self.oneCenterleftToFarLeft = Interpolate(from: self.one.centerLeft, to: self.one.farLeft, apply: {  [weak self] (position) in
+            self?.one.center.x = position
+        })
+        
+        /// People OFFLEFT to CENTERLEFT
+        self.twoOffLeftToCenterLeft = Interpolate(from: self.two.offLeft, to: self.two.centerLeft, apply: { [weak self] (position) in
+            self?.two.center.x = position
+        })
+        
+        /// Fans LEFT to OFFLeft
+        self.threeLeftToOffLeft = Interpolate(from: self.three.left, to: self.three.offLeft, apply: { [weak self] (position) in
+            self?.three.center.x = position
+        })
+        
+        /// Standing CENTER to LEFT
+        self.fourCenterToLeft = Interpolate(from: self.four.superCenter, to: self.four.left, apply: { [weak self] (position) in
+            self?.four.center.x = position
+        })
+        
+        self.fourCenterToLeftAlpha = Interpolate(from: 1, to: 0.4, apply: { [weak self] (alpha) in
+            self?.four.alpha = alpha
+        })
+        
+        /// Invite RIGHT to CENTER
+        self.fiveRightToCenter = Interpolate(from: self.five.right, to: self.five.superCenter, apply: { [weak self] (position) in
+            self?.five.center.x = position
+        })
+        
+        self.fiveRightToCenterAlpha = Interpolate(from: 0.4, to: 1, apply: { [weak self] (alpha) in
+            self?.five.alpha = alpha
+        })
+        
+        
     }
 }
 
