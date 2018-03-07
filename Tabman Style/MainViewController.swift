@@ -154,6 +154,8 @@ extension MainViewController {
         self.one.alpha = 0.4
         self.two.alpha = 1
         self.three.alpha = 0.4
+        self.four.alpha = 0.4
+        self.five.alpha = 0.4
     }
     
     private func configureLabels() {
