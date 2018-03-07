@@ -20,6 +20,7 @@ public class MainViewController: TabmanViewController {
     @IBOutlet weak var two: TabmanButton!
     @IBOutlet weak var three: TabmanButton!
     @IBOutlet weak var four: TabmanButton!
+    @IBOutlet weak var five: TabmanButton!
     
     var emojiLabel = UILabel()
     
@@ -83,7 +84,6 @@ public class MainViewController: TabmanViewController {
         let progressTo3 = position.x - 2
         
         if progressTo0 >= 0 && position.x <= 1 {
-            print("😡")
             self.oneLeftToOffRight?.progress = progressTo0
             self.oneLeftToOffRightAlpha?.progress = progressTo0
             self.twoCenterToCenterRight?.progress = progressTo0
@@ -92,7 +92,6 @@ public class MainViewController: TabmanViewController {
             self.fourOffRightToFarOffRight?.progress = progressTo0
         }
         if progressTo2 >= 0 && position.x >= 1 && position.x <= 2 {
-            print("👿")
             self.oneLeftToOffLeft?.progress = progressTo2
             self.twoCenterToLeft?.progress = progressTo2
             self.twoCenterToLeftAlpha?.progress = progressTo2
@@ -100,9 +99,7 @@ public class MainViewController: TabmanViewController {
             self.threeRightToCenterAlpha?.progress = progressTo2
             self.fourOffRightToRight?.progress = progressTo2
         }
-        print(progressTo3)
-        if progressTo3 >= 0 && position.x > 2 {
-            print("😃")
+        if progressTo3 >= 0 && position.x >= 2 {
             self.oneOffLeftToCenterLeft?.progress = progressTo3
             self.twoLeftToOffLeft?.progress = progressTo3
             self.threeCenterToLeft?.progress = progressTo3

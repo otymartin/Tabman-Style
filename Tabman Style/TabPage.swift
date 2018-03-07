@@ -13,6 +13,7 @@ public enum TabPage {
     case two
     case three
     case four
+    case five
     
     public var title: String {
         switch self {
@@ -21,8 +22,10 @@ public enum TabPage {
         case .two:
             return "People"
         case .three:
-            return "Standing"
+            return "Fans"
         case .four:
+            return "Standing"
+        case .five:
             return "Invite"
         }
     }
@@ -37,6 +40,8 @@ public enum TabPage {
             return .red
         case .four:
             return .blue
+        case .five:
+            return .purple
         }
     }
 }

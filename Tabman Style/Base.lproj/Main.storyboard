@@ -35,6 +35,11 @@
                                         <rect key="frame" x="391" y="7" width="31" height="30"/>
                                         <state key="normal" title="Four"/>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqi-qU-nZd" customClass="TabmanButton" customModule="Tabman_Style" customModuleProvider="target">
+                                        <rect key="frame" x="578" y="8" width="30" height="30"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Five"/>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="0ug-5l-d9x" firstAttribute="leading" secondItem="pH1-gT-LPJ" secondAttribute="leading" constant="16" id="0eW-MK-Xdn"/>
@@ -42,12 +47,15 @@
                                     <constraint firstItem="0ug-5l-d9x" firstAttribute="top" secondItem="pH1-gT-LPJ" secondAttribute="top" constant="7" id="6JW-8v-67U"/>
                                     <constraint firstItem="Grk-o8-MM3" firstAttribute="centerY" secondItem="vTq-Ao-npE" secondAttribute="centerY" id="AQk-ee-se9"/>
                                     <constraint firstAttribute="trailing" secondItem="37A-qE-ehz" secondAttribute="trailing" constant="16" id="Aa2-Rj-xKr"/>
-                                    <constraint firstItem="Grk-o8-MM3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="37A-qE-ehz" secondAttribute="trailing" symbolic="YES" id="FIe-Tp-6pf"/>
+                                    <constraint firstItem="Grk-o8-MM3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="37A-qE-ehz" secondAttribute="trailing" constant="8" symbolic="YES" id="FIe-Tp-6pf"/>
                                     <constraint firstItem="vTq-Ao-npE" firstAttribute="centerY" secondItem="pH1-gT-LPJ" secondAttribute="centerY" id="Hb4-Fh-3hO"/>
                                     <constraint firstItem="vTq-Ao-npE" firstAttribute="centerX" secondItem="pH1-gT-LPJ" secondAttribute="centerX" id="JDz-45-gMs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kqi-qU-nZd" secondAttribute="trailing" constant="-233" id="LdV-Ae-DMu"/>
                                     <constraint firstAttribute="trailing" secondItem="Grk-o8-MM3" secondAttribute="trailing" constant="-47" id="RQP-6P-HeO"/>
                                     <constraint firstAttribute="bottom" secondItem="0ug-5l-d9x" secondAttribute="bottom" constant="7" id="awo-S2-JPI"/>
                                     <constraint firstAttribute="height" constant="44" id="e79-gB-WMi"/>
+                                    <constraint firstItem="Kqi-qU-nZd" firstAttribute="top" secondItem="Grk-o8-MM3" secondAttribute="bottom" constant="-29" id="lBb-Ek-5y1"/>
+                                    <constraint firstItem="Kqi-qU-nZd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pH1-gT-LPJ" secondAttribute="leading" id="y1H-Gi-G0L"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -60,6 +68,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="five" destination="Kqi-qU-nZd" id="IbQ-cu-Hr4"/>
                         <outlet property="four" destination="Grk-o8-MM3" id="p4u-Pw-GoJ"/>
                         <outlet property="one" destination="0ug-5l-d9x" id="6al-Vs-krS"/>
                         <outlet property="tabman" destination="pH1-gT-LPJ" id="mV1-e3-VkA"/>
