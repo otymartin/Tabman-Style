@@ -16,11 +16,11 @@ public class MainViewController: TabmanViewController {
     
     
     @IBOutlet weak var tabman: UIView!
-    @IBOutlet weak var one: TabmanButton!
-    @IBOutlet weak var two: TabmanButton!
-    @IBOutlet weak var three: TabmanButton!
-    @IBOutlet weak var four: TabmanButton!
-    @IBOutlet weak var five: TabmanButton!
+    var one: TabmanButton!
+    var two: TabmanButton!
+    var three: TabmanButton!
+    var four: TabmanButton!
+    var five: TabmanButton!
     
     var emojiLabel = UILabel()
     
@@ -144,18 +144,56 @@ public class MainViewController: TabmanViewController {
 extension MainViewController {
     
     func configureUI() {
+        self.addButtons()
         self.configureLabels()
         self.configureInterpolations()
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+    }
+    
+    private func addButtons() {
+        self.one = TabmanButton()
         self.one.page = .one
-        self.two.page = .two
-        self.three.page = .three
-        self.four.page = .four
-        self.five.page = .five
         self.one.alpha = 0.4
+        self.tabman.addSubview(self.one)
+        self.one.sizeToFit()
+        self.one.center.x = self.one.left
+        self.one.center.y = self.tabman.bounds.height.divided(by: 2)
+        
+        self.two = TabmanButton()
+        self.two.page = .two
         self.two.alpha = 1
+        self.tabman.addSubview(self.two)
+        self.two.sizeToFit()
+        self.two.center.x = self.two.superCenter
+        self.two.center.y = self.tabman.bounds.height.divided(by: 2)
+        
+        self.three = TabmanButton()
+        self.three.page = .three
         self.three.alpha = 0.4
+        self.tabman.addSubview(self.three)
+        self.three.sizeToFit()
+        self.three.center.x = self.three.right
+        self.three.center.y = self.tabman.bounds.height.divided(by: 2)
+        
+        self.four = TabmanButton()
+        self.four.page = .four
         self.four.alpha = 0.4
+        self.tabman.addSubview(self.four)
+        self.four.sizeToFit()
+        self.four.center.x = self.four.offRight
+        self.four.center.y = self.tabman.bounds.height.divided(by: 2)
+        
+        self.five = TabmanButton()
+        self.five.page = .five
         self.five.alpha = 0.4
+        self.tabman.addSubview(self.five)
+        self.five.sizeToFit()
+        self.five.center.x = self.five.centerRight
+        self.five.center.y = self.tabman.bounds.height.divided(by: 2)
     }
     
     private func configureLabels() {

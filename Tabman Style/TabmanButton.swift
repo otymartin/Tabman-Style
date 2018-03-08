@@ -29,7 +29,6 @@ public class TabmanButton: UIButton {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        super.layoutSubviews()
         self.layoutIfNeeded()
     }
 }
@@ -40,7 +39,7 @@ extension CGFloat {
         return self / by
     }
     
-    public func plus(_ number: CGFloat) -> CGFloat {
+    public func add(_ number: CGFloat) -> CGFloat {
         return self + number
     }
     
@@ -63,8 +62,16 @@ extension TabmanButton {
         return 16
     }
     
-    private var width: CGFloat {
+    public var width: CGFloat {
         return self.bounds.width
+    }
+    
+    public var height: CGFloat {
+        return self.bounds.height
+    }
+    
+    public var halfOfHeight: CGFloat {
+        return self.height.divided(by: 2)
     }
     
     private var screenWidth: CGFloat {
@@ -77,7 +84,7 @@ extension TabmanButton {
     }
     
     public var farLeft: CGFloat {
-        return self.screenWidth.plus(self.screenWidth.divided(by: 2)).minus(self.margin).negative
+        return self.screenWidth.add(self.screenWidth.divided(by: 2)).minus(self.margin).negative
     }
     
     public var centerLeft: CGFloat {
@@ -117,7 +124,7 @@ extension TabmanButton {
     }
     
     public var farCenterRight: CGFloat {
-        return self.screenWidth.multiply(by: 2).plus(self.screenWidth.divided(by: 2).plus(self.width.divided(by: 2)))
+        return self.screenWidth.multiply(by: 2).add(self.screenWidth.divided(by: 2).add(self.width.divided(by: 2)))
     }
 
 }
