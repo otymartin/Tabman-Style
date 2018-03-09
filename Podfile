@@ -9,6 +9,7 @@ target 'Tabman Style' do
   pod 'TweenKit'
   pod 'SwiftyBeaver'
   pod 'Interpolate'
+  pod 'EZSwiftExtensions'
   # Pods for Tabman Style
 
   target 'Tabman StyleTests' do

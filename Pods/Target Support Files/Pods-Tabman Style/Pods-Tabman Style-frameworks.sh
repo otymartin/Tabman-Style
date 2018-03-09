@@ -135,6 +135,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Interpolate/Interpolate.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
@@ -144,6 +145,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/EZSwiftExtensions/EZSwiftExtensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Interpolate/Interpolate.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
