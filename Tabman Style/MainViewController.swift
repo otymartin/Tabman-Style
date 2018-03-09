@@ -99,6 +99,7 @@ public class MainViewController: TabmanViewController {
         let progressTo4 = position.x - 3
         
         if progressTo0 >= 0 && position.x <= 1 {
+            Log.warning(self.five.center.x)
             self.oneLeftToOffRight?.progress = progressTo0
             self.oneLeftToOffRightAlpha?.progress = progressTo0
             self.twoCenterToCenterRight?.progress = progressTo0
@@ -108,6 +109,7 @@ public class MainViewController: TabmanViewController {
             self.fiveCenterRightToFarRight?.progress = progressTo0
         }
         if progressTo2 >= 0 && position.x >= 1 && position.x <= 2 {
+            Log.info(self.five.center.x)
             self.oneLeftToOffLeft?.progress = progressTo2
             self.twoCenterToLeft?.progress = progressTo2
             self.twoCenterToLeftAlpha?.progress = progressTo2
@@ -116,7 +118,8 @@ public class MainViewController: TabmanViewController {
             self.fourOffRightToRight?.progress = progressTo2
             self.fiveCenterRightToOffRight?.progress = progressTo2
         }
-        if progressTo3 >= 0 && position.x >= 2 {
+        if progressTo3 >= 0 && position.x >= 2 && position.x <= 3 {
+            Log.error(self.five.center.x)
             self.oneOffLeftToCenterLeft?.progress = progressTo3
             self.twoLeftToOffLeft?.progress = progressTo3
             self.threeCenterToLeft?.progress = progressTo3
@@ -125,6 +128,7 @@ public class MainViewController: TabmanViewController {
             self.fiveOffRightToRight?.progress = progressTo3
         }
         if progressTo4 >= 0 && position.x >= 3 {
+            Log.debug(self.five.center.x)
             self.oneCenterleftToFarLeft?.progress = progressTo4
             self.twoOffLeftToCenterLeft?.progress = progressTo4
             self.threeLeftToOffLeft?.progress = progressTo4
@@ -147,11 +151,6 @@ extension MainViewController {
         self.addButtons()
         self.configureLabels()
         self.configureInterpolations()
-    }
-    
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
     }
     
     private func addButtons() {
