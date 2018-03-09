@@ -3,6 +3,7 @@ PODS:
   - Interpolate (1.0.0)
   - Pageboy (2.3.3)
   - SnapKit (4.0.0)
+  - SwiftyBeaver (1.5.1)
   - Tabman (1.5.0):
     - AutoInsetter (~> 1.1.0)
     - Pageboy (~> 2.3.0)
@@ -11,6 +12,7 @@ PODS:
 DEPENDENCIES:
   - Interpolate
   - SnapKit
+  - SwiftyBeaver
   - Tabman
   - TweenKit
 
@@ -19,9 +21,10 @@ SPEC CHECKSUMS:
   Interpolate: cd0ab81375ff3ec7d9e6023e032f4a29f53df4ad
   Pageboy: 0ea6c85f6e6cfd4d54d427fc640a51223ca9ebc7
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   Tabman: 9073d30c756e1112cc26374217229d7c22226a96
   TweenKit: eae162e1c18598ffd09097c3fc628fbc62036742
 
-PODFILE CHECKSUM: 737174b9cd478795e292aac59cb4c0d95a4ef618
+PODFILE CHECKSUM: 0e91a091cb39c87be9141dafd8dda2351bac9f9c
 
 COCOAPODS: 1.4.0

@@ -7,6 +7,7 @@ target 'Tabman Style' do
   pod 'Tabman'
   pod 'SnapKit'
   pod 'TweenKit'
+  pod 'SwiftyBeaver'
   pod 'Interpolate'
   # Pods for Tabman Style
 

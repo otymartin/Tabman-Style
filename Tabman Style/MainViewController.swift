@@ -319,7 +319,7 @@ extension MainViewController {
         })
         
         /// Invite OFFRight to RIGHT
-        self.fiveOffRightToRight = Interpolate(from: self.five.offRight, to: self.five.right, apply: { [weak self] (position) in
+        self.fiveOffRightToRight = Interpolate(from: self.five.center.x, to: self.five.right, apply: { [weak self] (position) in
             self?.five.center.x = position
         })
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 public class TabmanButton: UIButton {
         
@@ -74,6 +75,10 @@ extension TabmanButton {
         return self.height.divided(by: 2)
     }
     
+    public var halfOfWidth: CGFloat {
+        return self.width.divided(by: 2)
+    }
+    
     private var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
     }
@@ -112,7 +117,7 @@ extension TabmanButton {
     }
     
     public var centerRight: CGFloat {
-        return UIScreen.main.bounds.width + (UIScreen.main.bounds.width / 2) - (self.bounds.width / 2)
+        return self.screenWidth.add(self.screenWidth.divided(by: 2).minus(self.halfOfWidth))
     }
     
     public var farRight: CGFloat {
