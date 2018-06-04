@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'F724913454B5EBEABA7BC175A279A2AD'
-               BlueprintName = 'Interpolate'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Interpolate.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F724913454B5EBEABA7BC175A279A2AD"
+               BlueprintName = "Interpolate"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "Interpolate.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -17,7 +17,7 @@ public class Tabman: UIView {
         return self.delegate?.currentPosition
     }
         
-    public weak var delegate: MainViewController?
+    public weak var delegate: BaseMainViewController?
   
 }
 

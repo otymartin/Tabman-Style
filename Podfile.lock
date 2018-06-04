@@ -1,33 +1,40 @@
 PODS:
   - AutoInsetter (1.1.0)
-  - EZSwiftExtensions (1.11)
   - Interpolate (1.0.0)
   - Pageboy (2.3.3)
   - SnapKit (4.0.0)
+  - Spring (1.0.5)
   - SwiftyBeaver (1.5.1)
   - Tabman (1.5.0):
     - AutoInsetter (~> 1.1.0)
     - Pageboy (~> 2.3.0)
-  - TweenKit (0.3.1)
 
 DEPENDENCIES:
-  - EZSwiftExtensions
   - Interpolate
   - SnapKit
+  - Spring
   - SwiftyBeaver
   - Tabman
-  - TweenKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AutoInsetter
+    - Interpolate
+    - Pageboy
+    - SnapKit
+    - Spring
+    - SwiftyBeaver
+    - Tabman
 
 SPEC CHECKSUMS:
   AutoInsetter: ca08506cbb7c7b6b116b985c45e8573988c35090
-  EZSwiftExtensions: 84000042202d9fd574f626cda3064143f27fa767
   Interpolate: cd0ab81375ff3ec7d9e6023e032f4a29f53df4ad
   Pageboy: 0ea6c85f6e6cfd4d54d427fc640a51223ca9ebc7
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
   SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   Tabman: 9073d30c756e1112cc26374217229d7c22226a96
-  TweenKit: eae162e1c18598ffd09097c3fc628fbc62036742
 
-PODFILE CHECKSUM: 62bc11feb3ce433cb1b497dbb17e1d517942a338
+PODFILE CHECKSUM: b56b91f157941dd35ece8e41f6e0251e8fe5533f
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.2

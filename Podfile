@@ -4,12 +4,12 @@ platform :ios, '10.0'
 target 'Tabman Style' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  pod 'Spring'
   pod 'Tabman'
   pod 'SnapKit'
-  pod 'TweenKit'
   pod 'SwiftyBeaver'
   pod 'Interpolate'
-  pod 'EZSwiftExtensions'
+  inhibit_all_warnings!
   # Pods for Tabman Style
 
   target 'Tabman StyleTests' do
