@@ -17,6 +17,7 @@
 import UIKit
 import Spring
 import Pageboy
+import Interpolate
 
 public enum TabPage {
     case one
@@ -41,11 +42,12 @@ public enum TabPage {
     }
     
     public var color: UIColor {
+        return .white
         switch self {
         case .one:
-            return .green
-        case .two:
             return .yellow
+        case .two:
+            return .white
         case .three:
             return .red
         case .four:
@@ -55,14 +57,41 @@ public enum TabPage {
         }
     }
     
-    public var startingAlpha: CGFloat {
-        return self == .two ? 1 : 0.4
+    public var startingColor: UIColor {
+        switch self {
+        case .one:
+            return self.faded
+        case .two:
+            return self.visible
+        case .three, .four, .five:
+            return self.hidden
+        }
     }
-}
-
-public enum SecondTitlePosition {
-    case left
-    case right
+    
+    public var leftIconStartingAlpha: CGFloat {
+        return 0
+    }
+    
+    public var rightIconStartingAlpha: CGFloat {
+        switch self {
+        case .three, .four, .five:
+            return 0.4
+        default:
+            return 0
+        }
+    }
+    
+    public var hidden: UIColor {
+        return UIColor.white.withAlphaComponent(0)
+    }
+    
+    public var faded: UIColor {
+        return UIColor.black.withAlphaComponent(0.4)
+    }
+    
+    public var visible: UIColor {
+        return .black
+    }
 }
 
 public protocol TabButtonDelegate: class {
@@ -72,17 +101,26 @@ public protocol TabButtonDelegate: class {
 
 public class TabButton: SpringButton {
     
-    public var page: TabPage = .one
+    private var hopOneAlpha: Interpolate?
     
-    private var position: SecondTitlePosition  = .left
+    private var hopTwoAlpha: Interpolate?
     
-    public var secondTitle: NSAttributedString? {
+    private var hopThreeAlpha: Interpolate?
+    
+    public var page: TabPage = .one {
         didSet {
-            self.setSecondTitle()
+            switch self.page {
+            case .three, .four, .five:
+                self.addIconLabels()
+            default:
+                break
+            }
         }
     }
     
-    private var secondTitleLabel: UILabel?
+    private var leftIconLabel: UILabel?
+    
+    private var rightIconLabel: UILabel?
     
     public var title: String = "" {
         didSet {
@@ -115,24 +153,68 @@ extension TabButton {
         self.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
         self.addTarget(self, action: #selector(self.Tap), for: .touchUpInside)
     }
-    
-    private func setSecondTitle() {
-        if self.secondTitleLabel == nil {
-            self.addSecondTitleLabel()
+
+    private func addIconLabels() {
+        
+        self.leftIconLabel = UILabel()
+        self.leftIconLabel?.text = "💎3"
+        self.leftIconLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
+        self.leftIconLabel?.isUserInteractionEnabled = false
+        self.leftIconLabel?.alpha = self.page.leftIconStartingAlpha
+        guard let leftIconLabel = self.leftIconLabel else { return }
+        self.addSubview(leftIconLabel)
+        leftIconLabel.snp.makeConstraints { [weak self] (make) in
+            guard let view = self else { return }
+            make.leading.equalTo(view.snp.leading)
+            make.centerY.equalTo(view.snp.centerY)
         }
-        self.secondTitleLabel?.attributedText = self.secondTitle
-    }
-    
-    private func addSecondTitleLabel() {
-        self.secondTitleLabel = UILabel()
-        self.secondTitleLabel?.alpha = 1
-        guard let secondTitleLabel = self.secondTitleLabel else { return }
-        self.addSubview(secondTitleLabel)
-        secondTitleLabel.snp.makeConstraints { [weak self] (make) in
+        
+        self.rightIconLabel = UILabel()
+        self.rightIconLabel?.text = "💎3"
+        self.rightIconLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
+        self.rightIconLabel?.isUserInteractionEnabled = false
+        self.rightIconLabel?.alpha = self.page.rightIconStartingAlpha
+        guard let rightIconLabel = self.rightIconLabel else { return }
+        self.addSubview(rightIconLabel)
+        rightIconLabel.snp.makeConstraints { [weak self] (make) in
             guard let view = self else { return }
             make.trailing.equalTo(view.snp.trailing)
             make.centerY.equalTo(view.snp.centerY)
         }
+        
+        self.configureInterpolations()
+    }
+    
+    private func configureInterpolations() {
+        self.hopOneAlpha = Interpolate(from: 0.4, to: 0 , apply: { [weak self] (alpha) in
+            self?.rightIconLabel?.alpha = alpha
+        })
+        /// THREE CENTER (0) TO LEFT (0.4)
+        /// FOUR RIGHT (0.4) TO CENTER (0)
+        self.hopTwoAlpha = Interpolate(from: self.page == .three ? CGFloat(0) : 0.4, to: self.page == .three ? 0.4 : 0, apply: { [weak self] (alpha) in
+            guard let page = self?.page else { return }
+            switch page {
+            case .three:
+                self?.leftIconLabel?.alpha = alpha
+            case .four:
+                self?.rightIconLabel?.alpha = alpha
+            default:
+                break
+            }
+        })
+        /// FOUR CENTER (0) to LEFT (0.4)
+        /// FIVE RIGHT (0.4) TO CENTER (0)
+        self.hopThreeAlpha = Interpolate(from: self.page == .four ? CGFloat(0) : 0.4, to: self.page == .four ? 0.4 : 0, apply: { [weak self] (alpha) in
+            guard let page = self?.page else { return }
+            switch page {
+            case .four:
+                self?.leftIconLabel?.alpha = alpha
+            case .five:
+                self?.rightIconLabel?.alpha = alpha
+            default:
+                break
+            }
+        })
     }
     
     @objc func Tap() {
@@ -140,14 +222,48 @@ extension TabButton {
     }
 }
 
+extension TabButton {
+    
+    public func setIconTitles(left: String, right: String, with icon: UIImage?) {
+       
+    }
+    
+    
+    
+}
+
 extension TabButton: PageboyViewControllerDelegate {
     
     public func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
-        
-    }
-    
-    public func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
-        
+       
+        let progressTo2 = position.x - 1
+        let progressTo3 = position.x - 2
+        let progressTo4 = position.x - 3
+
+        if progressTo2 >= 0 && position.x >= 1 && position.x <= 2 {
+            switch self.page {
+            case .three:
+                self.hopOneAlpha?.progress = progressTo2
+            default:
+                break
+            }
+        }
+        if progressTo3 >= 0 && position.x >= 2 && position.x <= 3 {
+            switch self.page {
+            case .three, .four:
+                self.hopTwoAlpha?.progress = progressTo3
+            default:
+                break
+            }
+        }
+        if progressTo4 >= 0 && position.x >= 3 {
+            switch self.page {
+            case .four, .five:
+                self.hopThreeAlpha?.progress = progressTo4
+            default:
+                break
+            }
+        }
     }
 }
 
@@ -266,7 +382,6 @@ public extension CGFloat {
         return self + value
     }
 }
-
 
 
 
