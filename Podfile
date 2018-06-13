@@ -7,6 +7,7 @@ target 'Tabman Style' do
   pod 'Spring'
   pod 'Tabman'
   pod 'SnapKit'
+  pod 'SwiftyTimer'
   pod 'SwiftyBeaver'
   pod 'Interpolate'
   inhibit_all_warnings!

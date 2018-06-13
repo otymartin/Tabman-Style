@@ -41,23 +41,7 @@ public enum TabPage {
         }
     }
     
-    public var color: UIColor {
-        return .white
-        switch self {
-        case .one:
-            return .yellow
-        case .two:
-            return .white
-        case .three:
-            return .red
-        case .four:
-            return .blue
-        case .five:
-            return .purple
-        }
-    }
-    
-    public var startingColor: UIColor {
+    public var initialTextColor: UIColor {
         switch self {
         case .one:
             return self.faded
@@ -68,21 +52,17 @@ public enum TabPage {
         }
     }
     
-    public var leftIconStartingAlpha: CGFloat {
-        return 0
-    }
-    
-    public var rightIconStartingAlpha: CGFloat {
+    public var initialIconColor: UIColor {
         switch self {
         case .three, .four, .five:
-            return 0.4
+            return self.faded
         default:
-            return 0
+            return self.hidden
         }
     }
     
     public var hidden: UIColor {
-        return UIColor.white.withAlphaComponent(0)
+        return .clear
     }
     
     public var faded: UIColor {
@@ -138,11 +118,6 @@ public class TabButton: SpringButton {
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.configure()
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layoutIfNeeded()
     }
 }
 
