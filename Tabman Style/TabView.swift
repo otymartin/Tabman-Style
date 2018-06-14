@@ -45,6 +45,8 @@ final class TabView: UIView {
     
     private var fiveCenterRightToFarRight: Interpolate?
     
+    private var pageOneToZero: UIViewPropertyAnimator?
+    
     /// Page 1 to 2
     private var oneLeftToOffLeft: Interpolate?
     
@@ -59,6 +61,8 @@ final class TabView: UIView {
     private var fourOffRightToRight: Interpolate?
     
     private var fiveCenterRightToOffRight: Interpolate?
+    
+    private var pageOneToTwo: UIViewPropertyAnimator?
     
     /// Page 2 to 3
     private var oneOffLeftToCenterLeft: Interpolate?
@@ -75,6 +79,8 @@ final class TabView: UIView {
     
     private var fiveOffRightToRight: Interpolate?
     
+    private var pageTwoToThree: UIViewPropertyAnimator?
+    
     
     /// Page 3 to 4
     private var oneCenterleftToFarLeft: Interpolate?
@@ -90,6 +96,8 @@ final class TabView: UIView {
     private var fiveRightToCenter: Interpolate?
     
     private var fiveRightToCenterAlpha: Interpolate?
+    
+    private var pageThreeToFour: UIViewPropertyAnimator?
     
     public weak var delegate: TabViewDelegate?
     
@@ -138,7 +146,7 @@ extension TabView {
             button.setTitle(button.page.title, for: .normal)
             self.addSubview(button)
             button.sizeToFit()
-            button.center.x = button.tabCenter
+            button.center.x = button.tabCenterX
             button.center.y = button.tabCenterY
         }
         self.configureInterpolations()
@@ -157,7 +165,7 @@ extension TabView {
     private func configurePage1to0() {
         
         /// ONE LEFT to OFFRIGHT
-        self.oneLeftToOffRight = Interpolate(from: self.one.center.x, to: self.one.offRight, function: BasicInterpolation.linear, apply: { [weak self] (position) in
+        /*self.oneLeftToOffRight = Interpolate(from: self.one.center.x, to: self.one.offRight, function: BasicInterpolation.linear, apply: { [weak self] (position) in
             self?.one.center.x = position
         })
         self.oneLeftToOffRightAlpha = Interpolate(from: self.one.page.faded, to: self.one.page.visible, function: BasicInterpolation.linear, apply: { [weak self] (color) in
@@ -187,7 +195,23 @@ extension TabView {
         /// FIVE CENTERRIGHT to FARRIGHT
         self.fiveCenterRightToOffRight = Interpolate(from: self.five.center.x, to: self.five.farRight, apply: { [weak self] (position) in
             self?.five.center.x = position
-        })
+        })*/
+        
+        self.pageOneToZero = UIViewPropertyAnimator()
+        if #available(iOS 11.0, *) {
+            self.pageOneToZero?.pausesOnCompletion = true
+        } else {
+            // Fallback on earlier versions
+        }
+        self.pageOneToZero?.addAnimations {
+            self.one.center.x = self.one.offRight
+            self.one.setTitleColor(self.one.page.visible, for: .normal)
+            self.two.center.x = self.two.centerRight
+            self.two.setTitleColor(self.two.page.visible, for: .normal)
+            self.three.center.x = self.three.farRight
+            self.four.center.x = self.four.farOffRight
+            self.five.center.x = self.five.farRight
+        }
         
     }
     
@@ -308,13 +332,14 @@ extension TabView: PageboyViewControllerDelegate {
         let progressTo4 = position.x - 3
         
         if progressTo0 >= 0 && position.x <= 1 {
-            self.oneLeftToOffRight?.progress = progressTo0
+            /*self.oneLeftToOffRight?.progress = progressTo0
             self.oneLeftToOffRightAlpha?.progress = progressTo0
             self.twoCenterToCenterRight?.progress = progressTo0
             self.twoCenterToCenterRightAlpha?.progress = progressTo0
             self.threeRightToFarRight?.progress = progressTo0
             self.fourOffRightToFarOffRight?.progress = progressTo0
-            self.fiveCenterRightToFarRight?.progress = progressTo0
+            self.fiveCenterRightToFarRight?.progress = progressTo0*/
+            self.pageOneToZero?.fractionComplete = progressTo0
         }
         if progressTo2 >= 0 && position.x >= 1 && position.x <= 2 {
             self.oneLeftToOffLeft?.progress = progressTo2

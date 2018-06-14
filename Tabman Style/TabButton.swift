@@ -64,7 +64,7 @@ public enum TabPage {
         case .two:
             return self.visible
         case .three, .four, .five:
-            return self.hidden
+            return self.faded
         }
     }
     
