@@ -138,25 +138,10 @@ extension TabView {
             button.setTitle(button.page.title, for: .normal)
             self.addSubview(button)
             button.sizeToFit()
-            button.center.x = button.tabCenterX
+            button.center.x = button.tabCenter
             button.center.y = button.tabCenterY
-            switch button.page {
-            case .three:
-                button.set("0".appending(Emoji.ghost))
-            case .four:
-                button.set("0",with: button.page.icon)
-            case .five:
-                button.set("0",with: button.page.icon)
-            default:
-                break
-            }
         }
         self.configureInterpolations()
-    }
-    
-    public func updateTabTwo(_ title: String? = PageTitle.people) {
-        self.two.setTitle(title, for: .normal)
-        self.two.sizeToFit()
     }
 }
 
@@ -316,10 +301,6 @@ extension TabView: PageboyViewControllerDelegate {
     open func pageboyViewController(_ pageboyViewController: PageboyViewController, didScrollTo position: CGPoint, direction: PageboyViewController.NavigationDirection, animated: Bool) {
         
         self.isUserInteractionEnabled = position.x < 1 ? false : true
-        
-        self.three.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
-        self.four.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
-        self.five.pageboyViewController(pageboyViewController, didScrollTo: position, direction: direction, animated: animated)
         
         let progressTo0 = 1 - (position.x)
         let progressTo2 = position.x - 1

@@ -16,38 +16,22 @@ import Interpolate
 open class BaseMainViewController: TabmanViewController, TabViewDelegate {
     
     let tabView = TabView(frame: .zero)
-    
-    let button = UIButton()
-    
+        
     private lazy var modeIndicatorBar = UIView()
     
     private var viewControllers: [UIViewController] = []
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        //self.addTabView()
-        //self.loadViewControllers()
-        //self.dataSource = self
-       // self.tabView.delegate = self
-        
-        button.setTitle("People", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .heavy)
-        self.view.addSubview(button)
-        button.snp.makeConstraints { (make) in
-            make.center.equalTo(view.snp.center)
-        }
-        //button.sizeToFit()
-        
-        Timer.after(5) {
-            self.button.setTitle("Friends", for: .normal)
-        }
+        self.addTabView()
+        self.loadViewControllers()
+        self.dataSource = self
+        self.tabView.delegate = self
     }
     
     
     private func addTabView() {
         self.tabView.delegate = self
-        self.tabView.backgroundColor = .red
         self.view.addSubview(self.tabView)
         self.tabView.snp.makeConstraints { [weak self] (make) in
             guard let view = self?.view else { return }
